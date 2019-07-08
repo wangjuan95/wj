@@ -1,0 +1,6 @@
+diff a/123.php b/123.php	(rejected hunks)
+@@ -1,3 +1,4 @@
+ <?php
+ echo 111;
+ echo 333;
++echo '哈哈'；
