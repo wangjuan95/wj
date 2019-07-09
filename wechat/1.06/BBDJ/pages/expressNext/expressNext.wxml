@@ -1,0 +1,29 @@
+<!--pages/expressNext/expressNext.wxml-->
+<view class='expressNext'>
+  <view class='expressNext_stage_ct'>
+    <view class='expressNext_stage'>
+      <view class='expressNext_stage_title'>请将您要快递的物品，送到：</view>
+      <view class='expressNext_stage_details'>
+        <view class='expressNext_stage_details_left'>
+          <view class='expressNext_stage_details_left_title'>丰台区马家堡烟酒超市</view>
+          <view class='expressNext_stage_details_left_phone'>
+            <text class='text_f'>电话：</text>
+            <text class='text_l'>15650730736</text>
+          </view>
+          <view class='expressNext_stage_details_left_site expressNext_stage_details_left_phone'>
+            <text class='text_f'>地址：</text>
+            <text class='text_l'>北京市丰台区方庄南路13号院</text>
+          </view>
+        </view>
+        <view class='expressNext_stage_details_right'>
+          <image src='/images/wait_phone.png'></image>
+        </view>
+      </view>
+      <view class="expressNext_stage_hint">到店后，商家将进行称重和报价</view>
+    </view>
+  </view>
+  <view class='expressNext_consult'>
+    <view class='expressNext_consult_w'></view>
+    <view class='expressNext_consult_d'></view>
+  </view>
+</view>

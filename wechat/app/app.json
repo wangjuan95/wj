@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/header/header",
+    "pages/index/index",
+    "pages/daynum/daynum",
+    "pages/weightnum/weightnum",
+    "pages/ytztnum/ytztnum",
+    "pages/receiver/receiver",
+    "pages/receiverlist/receiverlist",
+    "pages/allreceiverlist/allreceiverlist",
+    "pages/courlist/courlist",
+    "pages/order/order",
+    "pages/fenye/fenye",
+    "pages/searchorder/searchorder",
+    "pages/noorder/noorder",
+    "pages/otherorder/otherorder",
+    "pages/logs/logs"
+  ],
+ "window": {
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "",
+  "backgroundColor": "#ffffff",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": true,
+  "pageOrientation": "auto"
+},
+"tabBar": {
+  "position": "bottom",
+  "color": "#7d7e80",
+  "selectedColor": "#01a75b",
+  "list": [
+    {
+      "pagePath": "pages/index/index",
+      "text": "寄件",
+      "iconPath": "images/icon_home.png",
+      "selectedIconPath": "images/icon_home_active.png"
+    },
+    {
+      "pagePath": "pages/receiver/receiver",
+      "text": "快递员",
+      "iconPath": "images/icon_me.png",
+      "selectedIconPath": "images/icon_me_active.png"
+    },
+    {
+      "pagePath": "pages/order/order",
+      "text": "订单",
+      "iconPath": "images/icon_order.png",
+      "selectedIconPath": "images/icon_order_active.png"
+    }
+  
+  ]
+},
+  "sitemapLocation": "sitemap.json"
+}
+
+

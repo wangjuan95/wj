@@ -1,0 +1,24 @@
+<!--pages/cancel/cancel.wxml-->
+<view class='cancel'>
+  <!-- <view class='cancel_title'>取消原因(可多选)</view> -->
+  <view class='cancel_select'>
+    <radio-group bindchange="checkboxChange">
+      <view class='cancel_select_item' data-id="{{item.id}}"  wx:for="{{cancel}}" wx:key="">
+        <view class='fl'>{{item.reason_name}}</view>
+        <view class='fr'>
+          <label class='checkbox'><radio value='{{item.id}}'></radio></label>
+        </view>
+      </view>
+    </radio-group>
+    <!-- <view class='cancel_select_item'>
+      <view class='fl'>02.其他平台的师傅上门了</view>
+      <view class='fr'>
+        <label class='checkbox'><checkbox></checkbox></label>
+      </view>
+    </view> -->
+  </view>
+  <view class='cancel_footer'>
+    <view bindtap='ad' class='fl'>暂不取消</view>
+    <view bindtap='qx' class='fr'>取消订单</view>
+  </view>
+</view>

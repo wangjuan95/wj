@@ -1,0 +1,85 @@
+/* pages/daynum/daynum.wxss */
+.list{
+  width:100%;
+  height:24rpx;
+}
+.row{
+  width:90%;
+  height:184rpx;
+  margin-left: 5%;
+  background: #fff;
+}
+.row .time{
+  width:100%;
+  height:44rpx;
+}
+
+.row .time .tu{
+  width:180rpx;
+  height:44rpx;
+  float:left;
+}
+.row .time .tu .image{
+  width:180rpx;
+  height:44rpx;
+}
+.row .time .riqi{
+  width:180rpx;
+  height:44rpx;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 44rpx;
+  float:left;
+  position: relative;
+  left:-180rpx;
+}
+.row .count{
+  width:100%;
+  height:140rpx;
+
+}
+
+.row .count .left{
+  width:32%;
+  height:140rpx;
+  float:left;
+ 
+}
+.row .count .middle{
+  width:32%;
+  height:140rpx;
+  float:left;
+}
+.row .count .bottom{
+  width:34%;
+  height:140rpx;
+  float:left;
+ 
+}
+.row .count .br{
+  width:1rpx;
+  height:30rpx;
+  float: left;
+  color:#F3F3F3;
+  line-height: 140rpx;
+}
+
+.row .count .num{
+    width:100%;
+    height:80rpx;
+    font-size: 32rpx;
+    color:#17182B;
+    float:left;
+    text-align: center;
+    line-height: 100rpx;
+}
+.row .count .type{
+    width:100%;
+    height:60rpx;
+    font-size: 26rpx;
+    color:#909090;
+    float:left;
+    text-align: center;
+   
+}
+

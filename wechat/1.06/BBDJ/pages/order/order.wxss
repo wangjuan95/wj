@@ -1,0 +1,114 @@
+/* pages/order/order.wxss */
+page {
+  height: 100%;
+}
+.order_no {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.order_no image {
+  width: 149rpx;
+  height: 146rpx;
+}
+.order_no view {
+  font-size: 30rpx;
+  color: #909090;
+}
+/*  */
+.order_list {
+  border-top:1rpx solid #f4f5fa;
+  padding: 0 30rpx;
+  padding-top: 10rpx;
+  box-sizing: border-box;
+}
+.order_item {
+  box-shadow:  0 0 30rpx #ddd;
+  margin-bottom: 40rpx;
+}
+.order_item_title {
+  display: flex;
+  align-items: center;
+  height: 105rpx;
+}
+.order_item_title .fl {
+  flex: 1;
+  border-left: 4rpx solid #01a75b;
+  font-size: 40rpx;
+  color: #909090;
+  font-weight: 700;
+  line-height: 1;
+  padding-left: 20rpx;
+}
+.order_item_title .fr {
+  padding-right: 16rpx;
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #FE6909;
+}
+.order_item_title .fr.qx {
+  color: #909090;
+}
+.order_item_title .fr.wc {
+  color: #01a75b;
+}
+.order_item_details {
+  border-top:1rpx solid #f4f5fa;
+  padding: 40rpx 16rpx 40rpx 20rpx;
+  box-sizing: border-box;
+}
+.order_item_details_commodity .name {
+  font-size: 36rpx;
+  color: #333;
+}
+.order_item_details_commodity .nmb {
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+.order_item_details_address {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.order_item_details_time {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #FE6909;
+}
+.order_item_payment {
+  border-top:1rpx solid #f4f5fa;
+  display: flex;
+  align-items: center;
+  padding: 0 16rpx 0 20rpx;
+  box-sizing: border-box;
+  height: 129rpx;
+}
+.order_item_payment .fl {
+  flex: 1;
+}
+.order_item_payment .fl .text1 {
+  font-size: 26rpx;
+  color: #909090;
+}
+.order_item_payment .fl .text2 {
+  font-size: 26rpx;
+  color: #333;
+}
+.order_item_payment .fl .text3 {
+  font-size: 30rpx;
+  color: #FE690A;
+  font-weight: 500;
+}
+.order_item_payment .fr {
+  width: 220rpx;
+  height: 70rpx;
+  background-color: #01a75b;
+  color: #fff;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8rpx;
+}

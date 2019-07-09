@@ -1,0 +1,166 @@
+/* pages/make/make.wxss */
+.make {
+  border-top: 1rpx solid #f4f5fa;
+  padding-bottom: 168rpx;
+}
+.make_servelogo {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 20px #f0f0f0;
+}
+.make_servelogo image {
+  display: block;
+  width: 100%;
+  height: 311rpx;
+  border-radius: 4px;
+}
+/*  */
+.make_servesite {
+  width: 100%;
+  padding: 40rpx 30rpx;
+  box-sizing: border-box;
+  border-bottom: 20rpx solid #fdfcfc;
+}
+.make_servesite_list {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0px 0px 20px #f0f0f0;
+}
+.make_servesite_item + .make_servesite_item {
+  border-top: 1rpx solid #f4f5fa;
+}
+.make_servesite_item {
+  width: 100%;
+}
+.make_servesite_item_title {
+  width: 100%;
+  padding-top: 40rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #333;
+}
+.make_servesite_item_ct {
+  width: 100%;
+  padding: 0 30rpx 0 20rpx;
+  box-sizing: border-box;
+  height: 180rpx;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.make_servesite_item_ct .fl {
+  float: left;
+}
+.make_servesite_item_ct .fl1 {
+  margin-right: 20rpx;
+  
+}
+.make_servesite_item_ct .fl1 image {
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+}
+.make_servesite_item_ct .fl2 {
+  flex: 1;
+}
+.make_servesite_item_ct .fl2 .text1 {
+  font-size: 28rpx;
+  color: #333;
+}
+.make_servesite_item_ct .fl2 .text2 {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #909090;
+}
+.make_servesite_item_ct .fl2 .text2 text {
+  padding-right: 30rpx;
+}
+.make_servesite_item_ct .fr {
+  float: right;
+  margin-left: 30rpx;
+}
+.make_servesite_item_ct .fr image {
+  width: 13rpx;
+  height: 23rpx;
+  display: block;
+}
+/*  */
+.make_servesteward {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.make_servesteward_title {
+  width: 100%;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #333;
+}
+.make_servesteward_message {
+  width: 100%;
+  margin-top: 40rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.make_servesteward_message .fl {
+  float: left;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.make_servesteward_message .fl image {
+  display: block;
+  float: left;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.make_servesteward_message .fl text {
+  /* float: left; */
+  font-size: 28rpx;
+  color: #333;
+}
+.make_servesteward_message .fr {
+  float: right;
+}
+.make_servesteward_message .fr image {
+  display: block;
+  width: 44rpx;
+  height: 44rpx;
+}
+.make_servesteward_introduce view {
+  padding: 40rpx 0;
+  font-size: 28rpx;
+  color: #909090;
+}
+.make_servesteward_introduce view + view {
+  border-top: 1rpx solid #f4f5fa;
+}
+.make_servefooter {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 168rpx;
+  padding: 0 30rpx;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.submit {
+  width: 100%;
+  height: 98rpx;
+  border-radius: 4px;
+  background-color: #01a75b;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  font-size: 34rpx;
+  color: #fff;
+}

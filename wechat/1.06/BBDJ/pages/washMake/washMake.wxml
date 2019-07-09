@@ -1,0 +1,57 @@
+<!--pages/washMake/washMake.wxml-->
+<view class='make'>
+  <view class='make_servelogo'><image src='/images/gx.png'></image></view>
+  <view class='make_servesite'>
+    <view class='make_servesite_list'>
+      <view class='make_servesite_item'>
+        <view class='make_servesite_item_title'><text>上门地址</text></view>
+        <view class='make_servesite_item_ct' bindtap='hq'>
+          <view class='fl fl1'><image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/make_servesite.png'></image></view>
+          <!-- <view class='fl fl2'>
+            <view class='text1'><text>成寿寺地铁A口出门</text></view>
+            <view class='text2'><text>某某某</text><text>136xxxx2580</text></view>
+          </view> -->
+          <view class='fl fl2'>
+            <view class='text1' wx:if="{{makeWatersite !== null}}"><text>{{makeWatersite.region}}</text></view>
+            <view class='text2' wx:if="{{makeWatersite !== null}}"><text>{{makeWatersite.address}}</text></view>
+            <view class='text2' wx:if="{{makeWatersite !== null}}"><text>{{makeWatersite.realname}}</text><text>{{makeWatersite.telephone}}</text></view>
+            <view class='text1' wx:if="{{makeWatersite == null}}"><text>请添加地址</text></view>
+          </view>
+          <view class='fr'><image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/make_serve_right.png'></image></view>
+        </view>
+      </view>
+      <view class='make_servesite_item'>
+        <view class='make_servesite_item_title'><text>希望上门时间</text></view>
+        <picker mode="multiSelector" bindchange="bindStartMultiPickerChange" bindtap='pickerTap' bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+          <view class='make_servesite_item_ct'>
+            <view class='fl fl1'><image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/make_servetime.png'></image></view>
+            <view class='fl fl2'>
+              <view class='text1'><text>{{startDate}}</text></view>
+            </view>
+            <view class='fr'><image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/make_serve_right.png'></image></view>
+          </view>
+        </picker>
+      </view>
+    </view>
+    
+  </view>
+  <view class='make_servesteward'>
+    <view class='make_servesteward_title'><text>联系商家</text></view>
+    <view class='make_servesteward_message'>
+      <view class='fl'>
+        <image src='/images/stage_logo.png'></image>
+        <view>
+          <text class='text1'>{{stage.contacts}}</text>
+          <text class='text2'>管家负责上门取件和送件</text>
+        </view>
+      </view>
+      <view class='fr' bindtap='calling'><image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/make_servesteward_iphone.png'></image></view>
+    </view>
+    <view class='make_servesteward_introduce'>
+      <view class='text1'><text>地址：{{stage.region+stage.address}}</text></view>
+    </view>
+  </view>
+  <view class='make_servefooter'>
+    <view bindtap='ac' class='submit'>确认下单</view>
+  </view>
+</view>

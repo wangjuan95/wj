@@ -1,0 +1,39 @@
+<!--pages/receiver/receiver.wxml-->
+<view class='site_list'>
+    <view class='site_list_item'>
+        <view class='fl'><text>驿站id:</text></view>
+        <view class='fr'><input type='text' placeholder='请输入id' value="{{dis_id}}" bindinput="onbtn"></input></view>
+    </view>
+    <view >
+        <button class='submit' bindtap='submit'>查询驿站取件快递员</button>
+    </view>
+</view>
+
+
+
+<view class='site_list'>
+    <view class='site_list_item'>
+        <view class='fl'><text>收件地址:</text></view>
+        <view class='fr'><input type='text' placeholder='请输入收件地址' value="{{addr}}" bindinput="addrbtn"></input></view>
+    </view>
+    <view >
+        <button class='submit' bindtap='addrsubmit'>查询派件员信息</button>
+    </view>
+</view>
+
+
+    <view class='site_list'>
+        <!-- <button class='submit' bindtap='all'>查询驿站和收件员信息</button> -->
+    </view>
+
+
+
+ <view class="site_list">
+    <picker bindchange="bindPickerChange" data-id="{{arrlist[index].id}}" range-key="{{'username'}}" range="{{arrlist}}">
+    <view class="picker">
+      当前选择：{{arrlist[index].username}}
+    </view>
+    </picker>
+ <button class='submit' bindtap='submit'>查询驿站取件快递员</button>
+ </view>    
+

@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="title">
+      <view class="fontstyle">快递订单</view>
+    </view>
+
+       <navigator url='/pages/daynum/daynum'>
+        <view class="daynum">
+            <view class='tu'><image class='image1' src='/images/dayji.png'></image></view>
+            <view class="fontnum">每日寄件量</view>
+            <view class="into"><image class='icon' src='/images/into.png'></image></view>
+        </view>
+     </navigator>
+
+
+     <navigator url='/pages/daynum/daynum'>
+        <view class="daynum" style="margin-top:24rpx;">
+            <view class='tu'><image class='image1' src='/images/daynum.png'></image></view>
+            <view class="fontnum">每日快递重量分布</view>
+            <view class="into"><image class='icon' src='/images/into.png'></image></view>
+        </view>
+      </navigator>  
+</view>

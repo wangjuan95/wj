@@ -1,0 +1,71 @@
+<view class="express">
+<!-- 寄件收件地址 -->
+  <view class='express_js'>
+  <!-- wx:if="{{express.length != 0}}" -->
+    <view class='express_j express_jj' wx:if="{{express.length != 0}}">
+      <view class='express_js_left'><image src='/images/jj.png'></image></view>
+      <view class='express_js_center' data-id="1" bindtap='siteBtn'>
+        <view class='xx'><text class='text1'>{{express.realname}}</text><text class='text2'>{{express.telphone}}</text></view>
+        <view class='dz'>北京市丰田区马家堡小区街道12号楼1单元101室</view>
+        <view class='authentication' catchtap='authentication'>未认证</view>
+      </view>
+      
+      <view class='express_js_right' data-id="1" bindtap='siteSelect'><image src='/images/dzb.png'></image></view>
+    </view>
+    <view class='express_j express_jj' wx:else>
+      <view class='express_js_left'><image src='/images/jj.png'></image></view>
+      <view class='express_js_center' data-id="1" bindtap='siteBtn'>
+        <!-- <view class='xx'><text class='text1'>某某某</text><text class='text2'>15650730736</text></view>
+        <view class='dz'>北京市丰田区马家堡小区街道12号楼1单元101室</view>
+        <view class='authentication' catchtap='authentication'>未认证</view> -->
+        <view class='qsrj'>请输入寄件地址</view>
+      </view>
+      
+      <view class='express_js_right' data-id="1" bindtap='siteSelect'><image src='/images/dzb.png'></image></view>
+    </view>
+
+
+    <view class='express_j'>
+      <view class='express_js_left'><image src='/images/sj.png'></image></view>
+      <view class='express_js_center' data-id="2" bindtap='siteBtn'>
+        <view class='xx'><text class='text1'>某某某</text><text class='text2'>15650730736</text></view>
+        <view class='dz'>北京市丰田区马家堡小区街道12号楼1单元101室</view>
+      </view>
+      <view class='express_js_right' data-id="2" bindtap='siteSelect'><image src='/images/dzb.png'></image></view>
+    </view>
+
+
+  </view>
+  <!-- 物品类型 -->
+  <view class='express_type'>
+    <view class='express_type_ct'>
+      <view class='express_type_ct_left'>物品类型</view>
+      <view class='express_type_ct_right'>
+        <picker bindchange="bindtype" value='{{1}}' range="{{array}}">
+          <text>{{array[array_index]}}</text>
+          <image src='/images/right.png'></image>
+        </picker>
+      </view>
+    </view>
+    <view class='express_type_ct'>
+      <view class='express_type_ct_left'>物品重量</view>
+      <view class='express_type_ct_right'>
+        <picker bindchange="bindweight" value='{{1}}' range="{{weight}}">
+          <text>{{weight[weight_index]}}</text>
+          <image src='/images/right.png'></image>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <!-- 固定底 -->
+  <view class='express_bottom'>
+    <view class='express_bottom_left'>
+      <text class='text_a'>预估价：</text>
+      <text class='text_b'>¥10.00</text>
+    </view>
+    <view class='express_bottom_right'>
+      <view bindtap='next'>下一步</view>
+    </view>
+  </view>
+  
+</view>

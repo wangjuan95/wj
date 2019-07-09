@@ -1,0 +1,9 @@
+<!--pages/searchorder/searchorder.wxml-->
+<view class="list" wx:for="{{searchorder}}" wx:key="">
+   <view>订单号：{{item.order_number}}</view>
+   <view>用户名：{{item.user_name}}</view>
+   <view>电 话 ：{{item.user_mobile}}</view>
+   <view>驿站名：{{item.stationname}}</view>
+   <view>名 称：{{item.repair_name}}</view>
+</view>
+

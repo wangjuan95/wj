@@ -1,0 +1,37 @@
+<!--pages/daynum/daynum.wxml-->
+<view class="container">
+
+  <view wx:for="{{arrriqi}}" wx:key="">
+    <view class="list"></view>
+    <view class="row">
+        <view class="time">
+            <view class="tu"><image class='image' src='/images/bg.png'></image></view>
+            <view class="riqi">{{item[0][0]['time']}}</view></view>
+        <view class="count">
+            <view class="left">
+                <view class="num">{{item[1][0]['yuantong']}}</view>
+                <view class="type">圆通</view>
+            </view>
+            <view class="br">|</view>
+            <view class="middle">
+            
+                <view class="num">{{item[2][0]['zhongtong']}}</view>
+                <view class="type">中通</view>
+            
+            </view>
+            <view class="br">|</view>
+            <view class="bottom">
+            
+              <view class="num">{{item[0][0]['count']}}</view>
+              <view class="type">合计</view>           
+            
+            </view>
+        </view>
+    
+    </view>
+  </view>
+
+
+
+   
+</view>

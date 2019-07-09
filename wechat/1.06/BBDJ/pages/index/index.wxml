@@ -1,0 +1,93 @@
+<!--pages/index/index.wxml-->
+<wxs src="cut.wxs" module="intercept" />
+<!-- <view class="{{show? 'hide': 'user_phone'}}" wx:if="{{isHide}}"> -->
+<view class="user_phone" wx:if="{{isHide}}">
+  <view class='index_banner'>
+    <image src='{{imgUrl}}xiaochengxu/WeChat_img/images/banner1.png'></image>
+    <view class='banner_site'>
+      <image class='site_logo' src='{{imgUrl}}xiaochengxu/WeChat_img/images/site_logo.png'></image>
+      <text>{{intercept.substr(index_site ? index_site : '北京')}}</text>
+      <!-- <image class='site_slect' src='{{imgUrl}}xiaochengxu/WeChat_img/images/site_select.png'></image> -->
+    </view>
+    <view class='banner_us'>
+      <view class='banner_us_01'>
+        <image src='/images/stage_logo.png'></image>
+      </view>
+      <view class='banner_us_02'>
+        <view class='banner_us_02_ct'>
+          <text class='text1'>{{stage.username}}</text>
+          <text class='text2'>您的专属社区管家</text>
+        </view>
+      </view>
+      <view class='banner_us_03'>
+        <button type="default" bindtap="calling">一键报修</button>
+      </view>
+    </view>
+  </view>
+  <view class='index_container_item1'>
+    <!-- <view class='item1_left'>
+    
+    </view> -->
+    <view class='item1_right'>
+      <!-- <navigator url="/pages/express/express">
+      <navigator bindtap='qqq'>
+        <image src='/images/index_01.png'></image>
+        <view><text>寄快递</text></view>
+      </navigator> -->
+      <navigator url='/pages/tzwater/tzwater?id=1'>
+        <image class='image1' src='/images/index_02.png'></image>
+        <view><text>桶装水上门</text></view>
+      </navigator>
+      <navigator url='/pages/wash/wash?id=2'>
+        <image class='image1' src='/images/index_04.png'></image>
+        <!-- <image class='image2' src='/images/index_04.png'></image> -->
+        <view><text>干洗</text></view>
+      </navigator>
+    </view>
+  </view>
+  <view class='index_container'>
+    <view class='index_container_item2 index_container_item' wx:for="{{index_containerList}}" wx:key="" style="background-image: url('{{item.img}}')">
+      <view class='index_container_item2_title'>{{item.title}}<text>{{item.describes ? item.describes : '' }}</text></view>
+      <view class='index_container_item2_ct'>
+        <view class='index_container_item2_ct_item' wx:for="{{item.classlist}}" wx:for-item="items" wx:key="">
+          <navigator url="/pages/indexpage/indexpage?id={{items.id}}&title={{items.title}}" hover-class="none">
+            <image src="{{items.img}}"></image>
+            <view>{{items.title}}</view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:elif="{{!isHide}}">
+    <view class='header'>
+        <image src='/images/wx_login.png'></image>
+    </view>
+
+    <view class='content'>
+        <view>申请获取以下权限</view>
+        <text>获得你的公开信息(昵称，头像等)</text>
+    </view>
+
+    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+        授权登录
+    </button>
+</view>
+
+<!-- <view class="{{show? 'user_phone': 'hide'}}">
+  <view class='header'>
+        <image src='/images/wx_login.png'></image>
+    </view>
+
+    <view class='content'>
+        <view>申请获取以下权限</view>
+        <text>获得你的手机号码</text>
+    </view>
+    <button class='bottom' type='primary' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+        授权手机号
+    </button>
+</view> -->
+
+
+
+

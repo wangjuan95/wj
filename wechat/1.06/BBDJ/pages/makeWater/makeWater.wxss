@@ -1,0 +1,148 @@
+/* pages/makeWater/makeWater.wxss */
+.makeWater {
+  border-top: 1rpx solid #f4f5fa;
+  padding-bottom: 200rpx;
+  
+}
+.makeWater_top {
+  padding: 0 30rpx 40rpx;
+  box-sizing: border-box;
+  border-bottom: 20rpx solid #fdfcfc;
+}
+.makeWater_commodity {
+  box-shadow: 0px 0px 20px #f0f0f0;
+  
+}
+.makeWater_commodity_title {
+  width: 100%;
+  height: 105rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.makeWater_commodity_list {
+  border-top: 1rpx solid #f4f5fa;
+  width: 100%;
+  height: 158rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.makeWater_commodity_list > view {
+  display: flex;
+  align-items: center;
+}
+.makeWater_commodity_list .view1 {
+  padding-top: 30rpx;
+  padding-bottom: 8rpx;
+  color: #333;
+}
+.makeWater_commodity_list .view1 .fl {
+  flex: 1;
+  font-size: 32rpx;
+}
+.makeWater_commodity_list .view1 .fr {
+  font-size: 28rpx;
+}
+.makeWater_commodity_list .view2 .fl {
+  flex: 1;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+.makeWater_commodity_list .view2 .fr {
+  font-size: 40rpx;
+  color: #FE690A;
+  font-weight: 700;
+}
+/*  */
+.makeWater_servesite {
+  width: 100%;
+  padding: 40rpx 30rpx;
+  box-sizing: border-box;
+  /* border-bottom: 20rpx solid #fdfcfc; */
+}
+.makeWater_servesite_list {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0px 0px 20px #f0f0f0;
+}
+.makeWater_servesite_item + .makeWater_servesite_item {
+  border-top: 1rpx solid #f4f5fa;
+}
+.makeWater_servesite_item {
+  width: 100%;
+}
+.makeWater_servesite_item_title {
+  width: 100%;
+  padding-top: 40rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #333;
+}
+.makeWater_servesite_item_ct {
+  width: 100%;
+  padding: 0 30rpx 0 20rpx;
+  box-sizing: border-box;
+  height: 180rpx;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.makeWater_servesite_item_ct .fl {
+  float: left;
+}
+.makeWater_servesite_item_ct .fl1 {
+  margin-right: 20rpx;
+  
+}
+.makeWater_servesite_item_ct .fl1 image {
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+}
+.makeWater_servesite_item_ct .fl2 {
+  flex: 1;
+}
+.makeWater_servesite_item_ct .fl2 .text1 {
+  font-size: 28rpx;
+  color: #333;
+}
+.makeWater_servesite_item_ct .fl2 .text2 {
+  /* margin-top: 10rpx; */
+  font-size: 26rpx;
+  color: #909090;
+}
+.makeWater_servesite_item_ct .fl2 .text2 text {
+  padding-right: 30rpx;
+}
+.makeWater_servesite_item_ct .fr {
+  float: right;
+  margin-left: 30rpx;
+}
+.makeWater_servesite_item_ct .fr image {
+  width: 13rpx;
+  height: 23rpx;
+  display: block;
+}
+.makeWater_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 148rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.makeWater_footer view {
+  margin-top: 20rpx;
+  width: 100%;
+  height: 98rpx;
+  background-color: #01a85b;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+  color: #fff;
+}

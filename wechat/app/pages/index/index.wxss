@@ -1,0 +1,34 @@
+/**index.wxss**/
+@import "indextwo.wxss";
+.num{
+  width: 100%;
+  height: 60rpx;
+  text-align: center;
+  /* background-color:azure; */
+  margin-top: 50rpx;
+  font-size: 28rpx;
+}
+
+.left{
+ width:50%;
+ height: 60rpx;
+ font-size: 30rpx;
+ float: left;
+}
+.submit{
+ width: 50%;
+ height: 60rpx;
+ font-size: 30rpx;
+ float:right;
+
+ 
+}
+.bottom{
+margin-top:50rpx;
+}
+.di{
+  margin-top:200rpx;
+}
+
+
+

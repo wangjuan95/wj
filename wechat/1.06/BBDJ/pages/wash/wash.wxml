@@ -1,0 +1,68 @@
+<!--pages/wash/wash.wxml-->
+<view class='wash_header_nav'>
+  <view class="headNavitem{{item == headNavitem?'active':''}}" wx:for="{{headNav}}" bindtap='jumpTo' data-opt="item{{index}}" data-classify="{{item}}" wx:key="">{{item}}</view>
+</view>
+
+<view class='wash_header_footer' bindtap='btn'>
+  <view>预约上门</view>
+</view>
+
+<scroll-view scroll-y="true" scroll-with-animation="true" scroll-into-view="{{toView}}">
+  <view class='standard' id='item0'>
+      <view class='step'>
+        <view class='step_item' wx:for="{{step}}" wx:key="">
+          <image src="{{item.img}}"></image>
+          <view class='text'>{{item.text}}</view>
+        </view>
+      </view>
+    <!--  -->
+      <view class='article'>
+        <view class='hint'>
+          <text>不接受报价可以随时取消，无需支付任何费用如需维修，则最低费用为100元。不足100元将按100元收取。</text>
+        </view>
+        <view class='article_item' wx:for="{{article}}" wx:key="">
+          <view class='article_item_title'><text>{{item.title}}</text></view>
+          <view class='article_item_list' wx:for="{{item.commodityinfo}}" wx:for-item="items" wx:key="">
+            <view class='article_item_list_fl'>{{items.title}}</view>
+            <view class='article_item_list_fr'>{{items.price + items.specifications }}</view>
+          </view>
+      </view>
+      
+      </view>
+  </view>
+  <!--  -->
+  <view class='problem' id='item1'>
+    <view class='problem_title'><text>常见问题</text></view>
+    <view class='problem_item' wx:for="{{issue}}" wx:key="" data-item="{{index}}" bindtap='rate'>
+      <view class='problem_item_ask'>
+        <view class='fl'>{{item.title}}</view>
+        <view class='fr'><image src="{{item.ishide?'https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/select_bottom.png': 'https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/select_top.png'}}"></image></view>
+      </view>
+      <view class="{{item.ishide?'hide':'problem_item_answer'}}">
+        <text>{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+  <!--  -->
+  <view class='evaluate' id='item2'>
+    <view class='evaluate_title'><text>评价</text></view>
+    <!-- <view class='evaluate_litem'>
+      <view class='evaluate_litem1'>
+        <view class="fl">某某某</view>
+        <view class="fr">xxxxx</view>
+      </view>
+      <view class='evaluate_litem2'>
+        <text>什么xxxxxxxx怎么样</text>
+      </view>
+      <view class='evaluate_litem3'>
+        <image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/evaluate.png'></image>
+        <image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/evaluate.png'></image>
+        <image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/evaluate.png'></image>
+        <image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/evaluate.png'></image>
+      </view>
+    </view> -->
+    
+    <view class='null'></view>
+  </view>
+  
+</scroll-view>

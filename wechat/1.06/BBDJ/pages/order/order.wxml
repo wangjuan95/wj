@@ -1,0 +1,167 @@
+<!--pages/order/order.wxml-->
+<view class='order_no' wx:if="{{order.length == 0}}">
+  <view class='order_no_content'>
+    <image src='/images/no_order.png'></image>
+    <view>暂无订单</view>
+  </view>
+</view>
+
+<view class='order_list' wx:elif="{{order.length != 0}}">
+<!-- 桶装水 -->
+  <view bindtap='order_item' data-id="{{item.id}}" class='order_item' wx:for="{{order}}" wx:key="" >
+    <!-- title -->
+    <!-- 桶装水 -->
+    <view wx:if="{{item.server_type == 1}}">
+        <view class='order_item_title' wx:if="{{item.is_cancel ==1 && item.pay_states == 1}}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr'>等待支付</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==1 && item.pay_states == 2 && item.states == 1}}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr'>等待接单</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==1 && item.pay_states == 2 && item.states == 2}}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr'>等待上门</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==2}}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr qx'>已取消</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==1 && item.pay_states == 2 && item.states == 4}}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr qx'>已完成</text>
+      </view>
+
+      <view class='order_item_details'>
+        <!-- 商品 -->
+        <view class='order_item_details_commodity' wx:for="{{item.detailed}}" wx:for-item="items" wx:key="">
+          <text class='name'>{{items.commodity_name}}</text>
+          <text class='nmb'>x {{items.number}}</text>
+        </view>
+        <!-- address -->
+        <view class='order_item_details_address'>
+          <view>{{item.region + item.address}}</view>
+        </view>
+        <!-- time -->
+        <view class='order_item_details_time' wx:for-item="time_appointment">
+          <view>{{item.time_appointment}}</view>
+        </view>
+      </view>
+      
+      <!-- payment -->
+      <view class='order_item_payment'>
+        <view class='fl'><text class='text1'>共{{item.zongshu}}件，</text><text class='text2'>合计: </text><text class='text3' wx:for-item="zongjia"> ¥{{item.zongjia}}元</text></view>
+        <view class='fr' wx:if="{{item.is_cancel ==1 && item.pay_states == 1}}">立即支付</view>
+        <!-- <view class='fr' wx:elif="{{item.pay_states == 2}}">立即支付</view> -->
+      </view> 
+    </view>
+    <!-- 维修保洁 -->
+    <view wx:if="{{item.server_type == 2}}">
+      <!-- title -->
+      <view class='order_item_title' wx:if="{{item.is_cancel ==1 && item.pay_states == 1}}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr'>等待接单</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==1 && item.pay_states == 1 && item.states == 2}}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr'>等待支付</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==1 && item.pay_states == 2 && item.states == 2}}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr'>等待上门</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==1 && item.pay_states == 2 && item.states == 4}}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr qx'>已完成</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==1 && item.pay_states == 2 && item.states == 8}}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr wc'>确认验收</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==2}}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr qx'>已取消</text>
+      </view>
+
+      <view class='order_item_details'>
+        <!-- 商品 -->
+        <view class='order_item_details_commodity' wx:for="{{item.detailed}}" wx:for-item="items" wx:key="">
+          <text class='name'>{{items.commodity_name}}</text>
+          <text class='nmb'>x {{items.number}}</text>
+        </view>
+        <!-- address -->
+        <view class='order_item_details_address' wx:for-item="region">
+          <view>{{item.region}}</view>
+        </view>
+        <!-- time -->
+        <view class='order_item_details_time' wx:for-item="time_appointment">
+          <view>{{item.time_appointment}}</view>
+        </view>
+      </view>
+      <!-- payment -->
+        <!-- wx:if="{{item.is_cancel ==1 && item.pay_states == 2 && item.states == 1}}" -->
+      <view class='order_item_payment' wx:if="{{item.states == 8 ||item.states == 4}}">
+        <view class='fl'><text class='text1'>共{{item.zongshu}}件，</text><text class='text2'>合计: </text><text class='text3' wx:for-item="zongjia">{{item.zongjia}}元</text></view>
+        <view class='fr' wx:if="{{item.is_cancel ==1 && item.pay_states == 1 && item.states == 8 }}">立即支付</view>
+      </view>
+    </view>
+    <!-- 干洗 -->
+    <view wx:if="{{item.server_type == 4}}">
+      <view class='order_item_title' wx:if="{{item.is_cancel ==1 && item.pay_states == 1 && item.states == 1}}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr'>等待接单</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==1 && item.pay_states == 1 && item.states == 2 }}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr'>等待上门</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==1 && item.pay_states == 1 && item.states == 8 }}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr'>等待支付</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==1 && item.pay_states == 2 && item.states == 5 }}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr'>衣服干洗中</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==1 && item.pay_states == 2 && item.states == 6 }}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr'>衣服干洗中</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==1 && item.pay_states == 2 && item.states == 7 }}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr'>衣服已到店</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==1 && item.pay_states == 2 && item.states == 4 }}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr qx'>已完成</text>
+      </view>
+      <view class='order_item_title' wx:elif="{{item.is_cancel ==2}}">
+        <text class='fl'>{{item.chanpin}}</text>
+        <text class='fr qx'>已取消</text>
+      </view>
+
+        <view class='order_item_details'>
+          <!-- 商品 -->
+          <view class='order_item_details_commodity' wx:for="{{item.detailed}}" wx:for-item="items" wx:key="">
+            <text class='name'>{{items.commodity_name}}</text>
+            <text class='nmb'>x {{items.number}}</text>
+          </view>
+          <!-- address -->
+          <view class='order_item_details_address' wx:for-item="region">
+            <view>{{item.region}}</view>
+          </view>
+          <!-- time -->
+          <view class='order_item_details_time' wx:for-item="time_appointment">
+            <view>{{item.time_appointment}}</view>
+          </view>
+        </view>
+        
+        <!-- payment -->
+        <view class='order_item_payment' wx:if="{{item.states == 8 ||item.states == 4 ||item.states == 5 ||item.states == 6 ||item.states == 7 ||item.states == 8}}">
+        <view class='fl'><text class='text1'>共{{item.zongshu}}件，</text><text class='text2'>合计: </text><text class='text3' wx:for-item="zongjia">{{item.zongjia}}元</text></view>
+        <view class='fr' wx:if="{{item.is_cancel ==1 && item.pay_states == 1 && item.states == 8}}">立即支付</view>
+      </view>
+    </view>
+  </view>
+</view>

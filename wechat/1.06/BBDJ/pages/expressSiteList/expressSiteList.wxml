@@ -1,0 +1,31 @@
+<!--pages/expressSiteList/expressSiteList.wxml-->
+<view class='expressSiteList'>
+  <view class='expressSiteList_list'>
+    <!-- 地址列表 -->
+    <view class='expressSiteList_list_item' wx:for="{{expressSiteList}}" wx:key="" wx:if="{{expressSiteList}}">
+      <view class='fl2' bindtap='fh' data-id="{{item}}">
+        <view class='fl2_1'><text>{{item.realname}}</text><text>{{item.telephone}}</text></view>
+        <view class='fl2_2'>{{item.region}}</view>
+        <view class='fl2_3'>{{item.address}}</view>
+      </view>
+      <view class='fl3'>
+        <image class='edit' bindtap='edit' src="/images/edit.png" data-id="{{item.id}}"></image>
+        <image class='del' bindtap='del' src="/images/del.png" data-id="{{item.id}}"></image>
+      </view>
+    </view>
+    <!-- 无地址 -->
+    <view class='empty_ct' wx:if="{{expressSiteList.length < 1}}">
+      <view>
+        <view>无地址</view>
+      <view>请添加新地址</view>
+      </view>
+      
+    </view>
+  </view>
+
+
+
+  <view class='expressSiteList_footer'>
+    <view class='submit' bindtap='submit'><text>新增地址</text></view>
+  </view>
+</view>

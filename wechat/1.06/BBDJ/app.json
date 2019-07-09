@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/order",
+    "pages/personal/personal",
+    "pages/indexpage/indexpage",
+    "pages/make/make",
+    "pages/wait/wait",
+    "pages/waittz/waittz",
+    "pages/cancel/cancel",
+    "pages/site/site",
+    "pages/tzwater/tzwater",
+    "pages/makeWater/makeWater",
+    "pages/tzsite/tzsite",
+    "pages/bjsite/bjsite",
+    "pages/wash/wash",
+    "pages/washMake/washMake",
+    "pages/express/express",
+    "pages/expressSite/expressSite",
+    "pages/expressSiteList/expressSiteList",
+    "pages/expressNext/expressNext",
+    "pages/community/community"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "position": "bottom",
+    "color": "#7d7e80",
+    "selectedColor": "#01a75b",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_home_active.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "images/icon_order.png",
+        "selectedIconPath": "images/icon_order_active.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "images/icon_me.png",
+        "selectedIconPath": "images/icon_me_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

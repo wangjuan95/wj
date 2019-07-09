@@ -1,0 +1,9 @@
+<!--pages/weightnum/weightnum.wxml-->
+<view class="list bg_h">
+   <view class="th">物品重量(kg)</view>
+   <view class="th">数量(件)</view>
+</view>
+<view wx:for="{{number}}" wx:key="" class="list bg_b">
+    <view class="th">{{index}}</view>  
+    <view class="th">{{item}}</view>  
+</view>

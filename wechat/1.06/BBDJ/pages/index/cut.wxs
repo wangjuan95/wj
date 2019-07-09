@@ -1,0 +1,10 @@
+var substr = function (val) {
+  if (val.length == 0 || val == undefined) {
+    return false;
+  } else if (val.length > 8) {
+    return val.substring(0, 8) + "...";
+  } else {
+    return val;
+  }
+}
+module.exports.substr = substr

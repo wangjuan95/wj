@@ -1,0 +1,31 @@
+/* pages/courlist/courlist.wxss */
+.table{
+  border:1px solid #ccc;
+}
+.tr{
+  width:100%;
+  height:3rem;
+   font-size: 26rpx;
+   display: flex;
+   justify-content: center;
+    align-items: center;
+}
+.th {
+ 
+ justify-content: center;
+background: #eee;
+ display: flex;
+ height: 3rem;
+ align-items: center;
+}
+.td{
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+.bg-w{
+ background: snow;
+}
+.bg-g{
+ background: #E6F3F9;
+}
