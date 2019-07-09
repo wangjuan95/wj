@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<a href="/index.php/index/money/distributor">驿站情况表</a><br /><br />
+	<a href="/index.php/index/money/message">短信充值记录表</a><br /><br />
+	<a href="/index.php/index/money/facesheet">面单充值记录表</a><br /><br />
+	<a href="/index.php/index/money/record">消费记录表</a>
+<br /><br /><br /><br />
+	<form method="post" action="/index.php/index/money/disrecord">
+		<input type='text' name='dis_id' value='' placeholder="请输入驿站编号">
+		<input type='submit' value="驿站消费记录关联运单号收件地址表"/>
+
+	</form>
+
+
+<br /><br /><br /><br />
+	<form method="post" action="/index.php/index/money/dismiling">
+		<input type='text' name='distributor' value='' placeholder="请输入驿站编号">
+		<input type='submit' value="驿站关联订单收件地址表"/>
+
+	</form>
+
+<br /><br /><br /><br />
+	<a href="/index.php/index/money/disorder">驿站寄件记录</a>
+
+</body>
+</html>

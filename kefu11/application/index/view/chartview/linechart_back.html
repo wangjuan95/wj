@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+    <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+<div style="text-align: center">
+    <form action="http://kefu.81bb.cn/index.php/index/chartview/downlode" method="post" enctype="multipart/form-data">
+    <input type="hidden" value="{$jj=serialize($jijian)}" name="jijian">
+    <input type="hidden" value="{$zjj=serialize($zjijian)}" name="zjijian">
+    <input type="hidden" value="{$yjj=serialize($yjijian)}" name="yjijian">
+
+        <input type='submit' value="下载表格"/>
+    </form>
+
+
+</div>
+
+<!--<div id="container" style="height: 100%"></div>-->
+<script type="text/javascript" src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script type="text/javascript" src="http://cdn.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+<script type="text/javascript" src="http://cdn.highcharts.com.cn/highcharts/modules/series-label.js"></script>
+<script type="text/javascript" src="http://cdn.highcharts.com.cn/highcharts/modules/oldie.js"></script>
+<script>
+    var chart = Highcharts.chart('container', {
+        title: {
+            text: '2010 ~ 2016 年太阳能行业就业人员发展情况'
+        },
+        subtitle: {
+            text: '数据来源：thesolarfoundation.com'
+        },
+        yAxis: {
+            title: {
+                text: '就业人数'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+        plotOptions: {
+            series: {
+                label: {
+                    connectorAllowed: false
+                },
+                pointStart: {$strr[0]}
+            }
+        },
+        series: [{
+            name: '安装，实施人员',
+            data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+        }, {
+            name: '工人',
+            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+        }, {
+            name: '销售',
+            data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+        }, {
+            name: '项目开发',
+            data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+        },],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+    });
+</script>
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>-->
+<!--<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=D3vTRAIYYTNW7gZoZk2trgIbIGfeN2YW"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--    var dom = document.getElementById("container");-->
+<!--    var myChart = echarts.init(dom);-->
+<!--    var app = {};-->
+<!--    option = null;-->
+<!--    option = {-->
+<!--        title: {-->
+<!--            text: '寄件、派件折线统计图'-->
+<!--        },-->
+<!--        tooltip: {-->
+<!--            trigger: 'axis'-->
+<!--        },-->
+<!--        legend: {-->
+<!--            data:['派件','圆通','中通','寄件']-->
+<!--        },-->
+<!--        grid: {-->
+<!--            left: '3%',-->
+<!--            right: '4%',-->
+<!--            bottom: '3%',-->
+<!--            containLabel: true-->
+<!--        },-->
+<!--        toolbox: {-->
+<!--            feature: {-->
+<!--                saveAsImage: {}-->
+<!--            }-->
+<!--        },-->
+<!--        xAxis: {-->
+<!--            type: 'category',-->
+<!--            boundaryGap: false,-->
+<!--             data:[{$strr}]-->
+
+
+<!--        },-->
+<!--        yAxis: {-->
+<!--            type: 'value'-->
+<!--        },-->
+<!--        series: [-->
+
+<!--            {-->
+<!--                name:'派件',-->
+<!--                type:'line',-->
+<!--                stack: '总量',-->
+
+<!--              data:[<?php foreach($paiarray as $k=>$v) : ?>{$v},<?php endforeach; ?>]-->
+<!--                //data:[220, 182, 191, 234, 290, 330, 310]-->
+<!--            },-->
+
+
+<!--            {-->
+<!--                name:'圆通',-->
+<!--                    type:'line',-->
+<!--                stack: '总量',-->
+
+
+<!--                data:[<?php foreach($yjijian as $kk=>$vv) : ?>{$vv},<?php endforeach; ?>]-->
+<!--            },-->
+<!--            {-->
+<!--                name:'中通',-->
+<!--                    type:'line',-->
+<!--                stack: '总量',-->
+
+
+<!--                data:[<?php foreach($zjijian as $kk=>$vv) : ?>{$vv},<?php endforeach; ?>]-->
+<!--            },-->
+<!--            {-->
+<!--                name:'寄件',-->
+<!--                    type:'line',-->
+<!--                stack: '总量',-->
+<!--                data:[<?php foreach($jijian as $kk=>$vv) : ?>{$vv},<?php endforeach; ?>]-->
+<!--            },-->
+<!--        ]-->
+
+
+<!--    };-->
+<!--    ;-->
+<!--    if (option && typeof option === "object") {-->
+<!--        myChart.setOption(option, true);-->
+<!--    }-->
+<!--</script>-->
+
+</body>
+</html>

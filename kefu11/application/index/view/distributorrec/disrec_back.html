@@ -1,0 +1,53 @@
+<html>
+    <head>
+    </head>
+    <link rel="stylesheet" href="/static/css/layui.css">
+    <body>
+
+    {foreach $res as $v}
+    <div style="margin-left: 5px;font-size: 20px;margin-top: 20px;">{$v['username']}||{$v['id']}</div>
+          <table style="margin-left: 50px;" class="layui-table" lay-skin="line">
+        <colgroup>
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="80">
+            <col width="80">
+            <col width="100">
+            <col width="200">
+            <col>
+        </colgroup>
+        <thead>
+        <tr>
+            <th>收件人</th>
+            <th>收件人电话</th>
+            <th>收件网点</th>
+            <th>收件网点电话</th>
+            <th>快递类型</th>
+            <th>订单号</th>
+            <th>订单时间</th>
+            <th>收件地址</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {foreach $v['recivermsg'] as $vv}
+<!--        <?php dump($vv); ?>-->
+        <tr>
+            <td>{$vv['receiver']}</td>
+            <td>{$vv['receiverphone']}</td>
+            <td>{$vv['recnetwork']}</td>
+            <td>{$vv['recphone']}</td>
+            <td>{$vv['express_id']}</td>
+            <td>{$vv['waill_number']}</td>
+            <td>{$data=date('Y-m-d H:i:s',$vv['order_time'])}</td>
+            <td>{$vv['addr']}</td>
+        </tr>
+        {/foreach}
+
+        </tbody>
+    </table>
+    {/foreach}
+    </body>
+</html>

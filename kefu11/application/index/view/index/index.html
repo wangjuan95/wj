@@ -1,0 +1,117 @@
+{include file="index/top" /}
+<div class="middlecontent">
+    <div class="meuleft">
+        {include file="index/left" /}
+    </div>
+    <div class="rightcontent">
+        <div class="layui-inline">
+
+        <div class="layui-input-inline serchtop">
+            <form method="post" action="/">
+                <input type="tel" name="phone"   placeholder="手机号"  class="layui-input floatinput">
+                <button class="layui-btn serchbut"><i class="layui-icon"></i></button>
+            </form>
+
+
+        </div>
+
+    </div>
+        <div class="kftc"><a href="./index.php/index/index/out">退出</a></div>
+    </div>
+
+
+<?php if(!empty($res)):?>
+{foreach $res as $v}
+<div class="dicontent">
+    <div class="leftdi dicolor">
+        <p style="font-size: 26px;">{$v['username']}</p>
+        <p style="font-size: 20px;color:red;">余额： {$v['balance']}元</p>
+        <br />
+<!--        <p>门头照：<img src="{$v['door_photo']}" class="img"></p>-->
+<!--        <br />-->
+
+        <p>地区：{$v['province']} {$v['city']}  {$v['area']}</p>
+        <p>地址：{$v['address']}</p>
+        <p>驿站编号：{$v['number']}</p>
+        <p>驿站管理员：{$v['contacts']}</p>
+        <p>驿站电话：{$v['contact_number']}</p>
+        <p>区域经理：<?php if(!empty($market)):?>{$market['realname']}<?php endif; ?></p>
+        <p>信誉度：{$v['credit']}</p>
+        <p>用户身份：<?php if($v['identity']==1) {echo '社区';} else{echo '商圈';}  ?></p>
+        <p>是否通过审核：<?php if($v['flag']==1) {echo '是';} else{echo '否';}  ?></p>
+        <p>是否上交合同：<?php if($v['is_contract']==1) {echo '否';} else{echo '是';}  ?></p>
+        <p>邮箱：{$v['contact_email']}</p>
+<!--        <br>-->
+<!--        <p>营业执照：<img src="{$v['license']}" class="img"></p>-->
+<!--        <br />-->
+<!--        <p>内部照：<img src="{$v['internal_photo']}" class="img"></p>-->
+        <p>创建日期：{$v['create_time']}</p>
+        <p>签约日期：{$data=date('Y-m-d H:i:s',$v['signing_time'])}</p>
+    </div>
+    <div class="middledi dicolor">
+        <p style="font-size: 26px;">寄快递订单</p>
+        <?php if(!empty($order)):?>
+        {foreach $order as $o}
+        <p>快递单号：{$o['waybill_number']}</p>
+        <p>寄件人：{$o['send_name']}  {$o['send_phone']}</p>
+
+        <p>收件人：{$o['collect_name']}  {$o['collect_phone']}</p>
+
+        <p>驿站实收金额：{$o['mailing_momey']}元</p>
+        <p>物品重量：{$o['goods_weight']}kg&nbsp;&nbsp;<?php if(!empty($o['dot_weight'])):?>网点称重重量:{$o['dot_weight']}kg&nbsp;&nbsp;网点金额 :{$o['dot_money']}元<br />平台金额 ：{$o['platform_money']}元<?php else: ?>未返回网点称重重量<?php endif; ?></p>
+        <p>寄件人地区：{$o['send_region']}</p>
+        <p>交接状态：<?php if($o['handover_states']==1) {echo '未交接';} else{echo '已交接';}  ?></p>
+
+        <p>时间：{$o['create_time']}</p>
+        <hr/>
+        {/foreach}
+        <?php endif ?>
+    </div>
+    <div class="rightdi dicolor">
+        <p style="font-size: 26px;">扣款明细</p>
+        <?php if(!empty($withhold)):?>
+        {foreach $withhold as $with}
+        <p>扣款原因：{$with['title']}</p>
+        <p>扣款金额：{$with['con_amount']}元</p>
+        <p>{$with['create_time']}</p>
+        <hr/>
+       {/foreach}
+        <?php endif ?>
+<!--        <div id="withhold"></div>-->
+    </div>
+
+
+</div>
+{/foreach}
+<?php endif ?>
+<script src="./static/layui.all.js"></script>
+</div>
+</body>
+</html>
+<script src="//res.layui.com/layui/dist/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use(['laypage', 'layer'], function(){
+        var laypage = layui.laypage
+            ,layer = layui.layer;
+
+
+        //总页数大于页码总数
+        laypage.render({
+            elem: 'order'
+            ,count: 70 //数据总数
+            ,jump: function(obj){
+                console.log(obj)
+            }
+        });
+        laypage.render({
+            elem: 'withhold'
+            ,count: 70 //数据总数
+            ,jump: function(obj){
+                console.log(obj)
+            }
+        });
+
+
+    });
+</script>

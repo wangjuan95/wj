@@ -1,0 +1,94 @@
+<html>
+    <head>
+    </head>
+    <link rel="stylesheet" href="/static/css/layui.css">
+    <style type="text/css">
+        .pages a,
+        .pages span {
+            display: inline-block;
+            padding: 2px 5px;
+            margin: 0 1px;
+            border: 1px solid #f0f0f0;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+
+        .pages a,
+        .pages li {
+            display: inline-block;
+            list-style: none;
+            text-decoration: none;
+            color: #58A0D3;
+        }
+
+        .pages a.first,
+        .pages a.prev,
+        .pages a.next,
+        .pages a.end {
+            margin: 0;
+        }
+
+        .pages a:hover {
+            border-color: #50A8E6;
+        }
+
+        .pages span.current {
+            background: #50A8E6;
+            color: #FFF;
+            font-weight: 700;
+            border-color: #50A8E6;
+        }
+      
+    </style>
+    <body>
+
+    {foreach $res as $v}
+    <div style="margin-left: 5px;font-size: 20px;margin-top: 20px;">{$v['username']}||{$v['id']}</div>
+          <table style="margin-left: 50px;" class="layui-table" lay-skin="line">
+        <colgroup>
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="80">
+            <col width="80">
+            <col width="100">
+            <col width="200">
+            <col>
+        </colgroup>
+        <thead>
+        <tr>
+            <th>取件快递员</th>
+            <th>取件快递员电话</th>
+            <th>取件网点</th>
+            <th>取件网点电话</th>
+            <th>快递类型</th>
+            <th>订单号</th>
+            <th>订单时间</th>
+            <th>收件地址</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {foreach $v['recivermsg'] as $vv}
+<!--        <?php dump($vv); ?>-->
+        <tr>
+            <td>{$vv['receiver']}</td>
+            <td>{$vv['receiverphone']}</td>
+            <td>{$vv['recnetwork']}</td>
+            <td>{$vv['recphone']}</td>
+            <td>{$vv['express_id']}</td>
+            <td>{$vv['waill_number']}</td>
+            <td>{$data=date('Y-m-d H:i:s',$vv['order_time'])}</td>
+            <td>{$vv['addr']}</td>
+        </tr>
+        {/foreach}
+
+        </tbody>
+    </table>
+    {/foreach}
+
+    <div class="pages">{$page}</div>
+    </body>
+</html>
