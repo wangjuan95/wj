@@ -17,4 +17,3 @@ echo '服务器测试';
 echo '测试';
 echo '哈哈，拉取';
 echo '拉';
-echo 'cc';

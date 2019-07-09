@@ -1,0 +1,6 @@
+diff a/123.php b/123.php	(rejected hunks)
+@@ -17,3 +17,4 @@
+ echo '测试';
+ echo '哈哈，拉取';
+ echo '拉';
++echo 'cc';
