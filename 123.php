@@ -22,3 +22,4 @@ echo '123';
 echo 'devlop';
 echo '456';
 echo '服务器测试';
+echo '卖萌';
