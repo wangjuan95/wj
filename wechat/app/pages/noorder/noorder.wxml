@@ -1,0 +1,16 @@
+<!--pages/noorder/noorder.wxml-->
+<view class='content'>
+    <view class="top">
+        <view class="th" style="width:25%">驿站名字</view>
+        <view class="th" style="width:25%">联系方式</view>
+        <view class="th" style="width:25%">区域经理</view>
+        <view class="th" style="width:25%">距今天数</view>
+    </view>
+    <view class="bottom"  wx:for="{{noorder}}" wx:key=''>
+        <view class="tr" style="width:45%">{{item.username}}</view>
+        <view class="tr" style="width:30%">{{item.contact_number}}</view>
+        <view class="tr" style="width:15%">{{item.market}}</view>
+        <view class="tr" style="width:10%">{{item.time_day}}</view>
+    </view>
+  <view class="tishi">{{title}}</view>
+</view>

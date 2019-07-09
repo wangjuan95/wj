@@ -1,0 +1,14 @@
+<view class="nav">
+  <view class="nav_item{{item == default?'hide': 'show'}}" wx:for="{{nav}}" wx:key="" bindtap="btn" data-index="item{{index}}" data-ct="{{item}}">{{item}}</view>
+</view>
+<scroll-view class='ct' scroll-y="true" scroll-with-animation="true" scroll-into-view="{{toView}}">
+  <view class='nav_ct' id="item{{0}}"></view>
+  <view class='nav_ct' id="item{{1}}"></view>
+  <view class='nav_ct' id="item{{2}}"></view>
+  <view class='nav_ct' id="item{{3}}"></view>
+</scroll-view>
+<input placeholder='请输入问起'></input>
+<view>我我我我我我我我我我我我</view>
+<view>我我我我我我我我我</view>
+<view>我我我我我我</view>
+<view>我我我</view>

@@ -1,0 +1,57 @@
+/* pages/expressNext/expressNext.wxss */
+.expressNext {
+  border-top: 1rpx solid #f4f5fa;
+}
+.expressNext_stage_ct {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.expressNext_stage {
+  padding: 0 20rpx;
+  box-shadow: 0rpx 8rpx 22rpx 0rpx rgba(41,41,41,0.1);
+  border-radius: 10rpx;
+}
+.expressNext_stage_title {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  
+  font-size: 26rpx;
+  color: #909090;
+}
+.expressNext_stage_details {
+  padding: 40rpx 0;
+  border-top: 1rpx solid #f4f5fa;
+  border-bottom: 1rpx solid #f4f5fa;
+  display: flex;
+  align-items: center;
+}
+.expressNext_stage_details_left {
+  flex: 1;
+}
+.expressNext_stage_details_left_title {
+  font-size: 34rpx;
+  color: #333;
+}
+.expressNext_stage_details_left_phone {
+  margin-top: 10rpx;
+}
+.expressNext_stage_details_left_phone .text_f {
+  font-size: 28rpx;
+  color: #909090;
+}
+.expressNext_stage_details_left_phone .text_l {
+  font-size: 28rpx;
+  color: #333;
+}
+.expressNext_stage_details_right image {
+  width: 82rpx;
+  height: 82rpx;
+}
+.expressNext_stage_hint {
+  display: flex;
+  align-items: center;
+  height: 84rpx;
+  font-size: 24rpx;
+  color: #909090;
+}

@@ -1,0 +1,61 @@
+<!--pages/personal/personal.wxml-->
+<view class='personal'>
+  <view class='personal_top'>
+    <view class='personal_top_img'>
+      <image src="{{userInfo.headimg}}"></image>
+    </view>
+    <view class='personal_top_text'>
+      <view class='personal_top_text_monicker'>{{userInfo.username}}</view>
+       <!-- wx:if="{{userPhoneNumber == ''}}" -->
+      <view class='personal_top_text_phone' wx:if="{{purePhoneNumber == ''}}">
+        <image src="/images/telphone.png"></image>
+        <button open-type='getPhoneNumber' bindgetphonenumber="phonenumber">绑定手机号</button>
+      </view>
+      <view class='personal_top_text_phone' wx:else>
+        <image src="/images/telphone.png"></image>
+        <text>{{purePhoneNumber}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='personal_bottom'>
+    <view class='personal_bottom_list'>
+      <view class='personal_bottom_list_item'>
+        <view class='fl'>
+          <image src="/images/express_dz.png"></image>
+        </view>
+        <view class='fr' bindtap='btnsite'>
+          <text>我的地址</text>
+          <image src="/images/right.png"></image>
+        </view>
+      </view>
+      <view class='personal_bottom_list_item'>
+        <view class='fl'>
+          <image src="/images/03.png"></image>
+        </view>
+        <view class='fr' bindtap='btnphone'>
+          <text>联系客服</text>
+          <image src="/images/right.png"></image>
+        </view>
+      </view>
+      <view class='personal_bottom_list_item'>
+        <view class='fl'>
+          <image src="/images/02.png"></image>
+        </view>
+        <view class='fr' bindtap='btnyz'>
+          <text>绑定驿站</text>
+          <image src="/images/right.png"></image>
+        </view>
+      </view>
+      <!-- <view class='personal_bottom_list_item'>
+        <view class='fl'>
+          <image src="/images/05.png"></image>
+        </view>
+        <view class='fr'>
+          <text>关于我们</text>
+          <image src="/images/right.png"></image>
+        </view>
+      </view> -->
+    </view>
+  </view>
+</view>
+  

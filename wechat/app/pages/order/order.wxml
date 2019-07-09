@@ -1,0 +1,73 @@
+<!--pages/order/order.wxml-->
+<view class="bottom">
+    <navigator url='/pages/searchorder/searchorder?type=1'>
+        <image class='image1' src='/images/index_02.png'></image>
+        <view><text>桶装水</text></view>
+    </navigator>
+    <navigator url='/pages/searchorder/searchorder?type=4'>
+        <image class='image1' src='/images/index_04.png'></image>
+        <view><text>干洗</text></view>
+    </navigator>
+     <navigator url='/pages/searchorder/searchorder?type=2'>
+        <image class='image1' src='/images/index_01.png'></image>
+        <view><text>维修</text></view>
+    </navigator>
+ 
+</view>
+
+<view class="singradio">
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio">
+      <radio value="1" checked=""/>桶装水
+      <radio value="4" checked=""/>干洗
+      <radio value="2" checked=""/>维修
+    </label>
+  </radio-group>
+  <button class="submit" bindtap="searchbtn">搜索订单</button>
+</view>
+
+ <button  class='submit' bindtap='noorder'>查询没有订单的驿站</button>
+
+
+<view class="con">
+      <view class="left">
+      
+        <picker  mode="date" value="{{date}}" start="2015-09-01" bindchange="bindDateChange">
+          <view class="picker">
+          选择日期：{{date}}
+          </view>
+        </picker>
+      </view>
+      <view class="right">
+        <button  class='submit' bindtap='submit'>查询取消订单的其他订单</button>
+      </view>
+
+
+</view>
+<view class="table" wx:for="{{otherorder}}" wx:key=""> 
+  <view class="ding">手机号：{{index}}</view>
+  <view wx:for="{{item}}" wx:key=""> 
+  
+  <view  class="ding"> 姓   名：{{index}}</view>
+    <view class="top">
+        <view class="tt" style='width:25%'>订单号</view>
+        <view class="tt" style='width:32%'>寄件人</view>
+        <view class="tt" style='width:35%'>订单时间</view>
+        <view class="tt" style='width:20%'>快递公司</view>
+    </view>
+    <view wx:for="{{item.otherorder}}" wx:key="" class="list">
+        <view class="tt" style='width:20%'>{{item.waybill_number}}</view>
+        <view class="tt" style='width:32%'>{{item.send_name}}</view>
+        <view class="tt" style='width:35%'>{{item.create_time}}</view>
+        <view class="tt" style='width:20%'>{{item.express_name}}</view>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+

@@ -1,0 +1,120 @@
+/* pages/personal/personal.wxss */
+.personal {
+  border-top: 1rpx solid #f4f5fa;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.personal_top {
+  padding: 46rpx 25rpx;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-shadow:0px 0px 20px #f0f0f0;
+  border-radius: 10rpx;
+}
+.personal_top_img {
+  width: 130rpx;
+  height: 130rpx;
+  background-color: pink;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.personal_top_img image {
+  border-radius: 50%;
+  display: block;
+  width: 130rpx;
+  height: 130rpx;
+}
+.personal_top_text {
+  flex: 1;
+}
+.personal_top_text_monicker {
+  font-size: 40rpx;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 6rpx;
+}
+.personal_top_text_phone {
+  display: flex;
+  align-items: center;
+}
+.personal_top_text_phone button {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 6rpx 14rpx;
+  border-radius: 20rpx;
+  border: none;
+  /* padding-left: 10rpx;
+  padding-right: 10rpx; */
+  box-sizing:border-box;
+  font-size:28rpx;
+  color:#909090;
+
+  line-height: 1;
+  /* position:relative;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:14px;
+  padding-right:14px;
+  box-sizing:border-box;
+  font-size:18px;
+  text-align:center;
+  text-decoration:none;
+  line-height:2.55555556;
+  border-radius:5px;
+  -webkit-tap-highlight-color:transparent;
+  overflow:hidden;
+  color:#000000;
+  background-color:#F8F8F8; */
+}
+.personal_top_text_phone image {
+  width: 21rpx;
+  height: 27rpx;
+  margin-right: 10rpx;
+  /* display: block; */
+}
+.personal_top_text_phone text {
+  font-size: 28rpx;
+  color: #909090;
+}
+
+/*  */
+.personal_bottom {
+
+}
+.personal_bottom_list_item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+}
+.personal_bottom_list_item .fl {
+  display: flex;
+  align-items: center;
+  margin-right: 40rpx;
+}
+
+.personal_bottom_list_item .fl image {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.personal_bottom_list_item .fr {
+  flex: 1;
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1rpx solid #f4f5fa;
+}
+.personal_bottom_list_item .fr text {
+  flex: 1;
+  font-size: 30rpx;
+  color: #333;
+}
+.personal_bottom_list_item .fr image {
+  width: 13rpx;
+  height: 23rpx;
+}

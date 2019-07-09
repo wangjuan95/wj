@@ -1,0 +1,6 @@
+<!--pages/page/page.wxml-->
+<button 
+open-type="getrealnameAuthinfo"
+bindgetRealnameAuthInfo="authinfo"
+category-id="{{[99, 904]}}}"
+>实名认证</button>

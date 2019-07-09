@@ -1,0 +1,21 @@
+<!--pages/courlist/courlist.wxml-->
+ <view class="table">
+  <view class="tr">
+    <view class="th" style='width:20%'>派件员</view>
+    <view class="th" style='width:30%'>派件员电话</view>
+    <view class="th " style='width:30%'>网点</view>
+    <view class="th " style='width:30%'>网点电话</view>
+    
+  </view>
+  <block wx:for="{{arrlist}}" wx:key="">
+    <view class="tr bg-g">
+    <view class="td" style='width:20%'>{{item.courier}}</view>
+      <view class="td" style='width:30%'>{{item.courierphone}}</view>
+      <view class="td" style='width:30%'>{{item.counetwork}}</view>
+      <view class="td" style='width:30%'>{{item.couphone}}</view>
+    </view>
+
+  </block>
+
+ 
+</view>

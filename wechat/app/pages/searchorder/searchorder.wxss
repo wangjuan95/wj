@@ -1,0 +1,6 @@
+/* pages/searchorder/searchorder.wxss */
+.list{
+  font-size: 32rpx;
+  margin:20rpx;
+  background:#eee;
+}

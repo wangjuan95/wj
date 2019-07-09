@@ -1,0 +1,21 @@
+/* pages/weightnum/weightnum.wxss */
+.list{
+  display: flex;
+  justify-items: center;
+ 
+}
+
+.th{
+  width:50%;
+  height:60rpx;
+  
+ font-size: 32rpx;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+.bg_h{
+  background:rgb(132, 146, 163);
+}
+.bg_b{
+  background: #eee;
+}

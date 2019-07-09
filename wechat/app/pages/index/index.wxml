@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<button class="tu" bindtap='zhexian'>最近一个月圆通、中通总寄件量</button>
+
+ <button class="num" bindtap='btn'>最近一个月各平台寄件量</button>
+
+<view class="bottom">
+  <picker class="left" mode="date" value="{{date}}" start="2015-09-01" bindchange="bindDateChange">
+    <view class="picker">
+      <!-- <image class="img" src="/images/no_order.png"></image> <text class='riqi'>{{date}}</text> -->
+     选择日期：{{date}}
+    </view>
+  </picker>
+
+ <view class="right">
+    <button  class='submit' bindtap='submit'>查询该日期平台寄件量</button>
+  </view>
+
+</view>
+ 
+ <!-- </view> -->
+
+
+<!-- <image src="/images/tu1.jpeg"></image> -->
+
+<view class="di">
+  <picker class="left" mode="date" value="{{time}}" start="2015-09-01" bindchange="bindDateChange2">
+    <view class="picker">
+      <!-- <image class="img" src="/images/no_order.png"></image> <text class='riqi'>{{date}}</text> -->
+     选择日期(可选可不选)：{{time}}
+    </view>
+  </picker>
+
+ <view class="right">
+    <button  class='submit' bindtap='submit2'>查询该日期物品重量寄件量</button>
+  </view>
+
+</view>

@@ -1,0 +1,89 @@
+/* pages/tzsite/tzsite.wxss */
+/* page {
+  height: 100%;
+} */
+.tzsite {
+  border-top: 1rpx solid #f4f5fa;
+  width: 100%;
+  padding-bottom: 20rpx;
+}
+.empty {
+  margin-top: 50%;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tzsite_list {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.tzsite_list_item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f4f5fa;
+}
+.tzsite_list_item .fl1 {
+  margin-right: 20rpx;
+}
+
+.tzsite_list_item .fl2 {
+  flex: 1;
+  color: #909090;
+  font-size: 26rpx;
+}
+.tzsite_list_item .fl2 .fl2_1 {
+  font-size: 26rpx;
+  color: #333;
+}
+.tzsite_list_item .fl2 .fl2_1 text {
+  padding-right: 20rpx;
+}
+/* .tzsite_list_item .fl2 .fl2_1 {
+  display: flex;
+} */
+.tzsite_list_item .fl3 {
+  margin-left: 20rpx;
+}
+.tzsite_list_item .fl3 image {
+  width: 36rpx;
+  height: 36rpx;
+}
+.tzsite_list_item .fl3 .del {
+  padding-left: 20rpx;
+}
+
+
+
+
+.tzsite_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 168rpx;
+  padding: 0 30rpx;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.submit {
+  width: 100%;
+  height: 98rpx;
+  border-radius: 49rpx;
+  background-color: #01a75b;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  font-size: 34rpx;
+  color: #fff;
+}
+.empty_ct {
+  width: 100%;
+  height: 100%;
+  margin-top: 40%;
+  text-align: center;
+  
+}

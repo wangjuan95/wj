@@ -1,0 +1,34 @@
+<!--pages/tzwater/tzwater.wxml-->
+<view class='tzwater'>
+  <picker name="picker_hx" class="cybm_pic_1" data-id="{{pic_array[hx_index].id}}" range="{{pic_array}}" range-key="{{'username'}}"  bindchange="bindPickerChange_hx">
+    <view class='tzwater_stage'>
+      <view class='fl'>{{pic_array[hx_index].username}}</view>
+      <view class='fr'><image src="/images/right.png"></image></view>
+    </view>
+  </picker>
+      
+    
+  <view class='tzwater_list'>
+    <view class='tzwater_list_title'>桶装水列表</view>
+    <view class='tzwater_list_item' wx:for="{{tzwaterList}}" wx:key="">
+      <view class='tzwater_list_item_title'>{{item.title}}</view>
+      <view class='tzwater_list_item_cat'>
+        <view class='fl'><text>{{item.price}}</text></view>
+        <view class='fr'>
+          <image bindtap='minusCount' data-index="{{index}}" data-id="{{item.id}}" src='/images/minus.png'></image>
+          <text>{{item.num}}</text>
+          <image bindtap='addCount' data-index="{{index}}" src='/images/add.png' data-id="{{item.id}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='tzwater_footer'>
+    <view class='fl'>
+      <view class='view_a'><text class='text_a'>合计:</text><text class='text_b'>¥</text><text class='text_b'>{{totalPrice}}</text></view>
+      <view class='view_b'>免配送费|支持自取</view>
+    </view>
+    <view class='fr' bindtap='account'>
+      <view>去结算</view>
+    </view>
+  </view>
+</view>

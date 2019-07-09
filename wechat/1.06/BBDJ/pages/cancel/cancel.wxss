@@ -1,0 +1,78 @@
+/* pages/cancel/cancel.wxss */
+.cancel {
+  width: 100%;
+  border-top: 1rpx solid #f4f5fa;
+  padding-bottom: 188rpx;
+}
+.cancel_title {
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #333;
+}
+.cancel_select {
+  width: 100%;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.cancel_select_item + .cancel_select_item {
+  border-top: 1rpx solid #f4f5fa;
+}
+.cancel_select_item {
+  width: 100%;
+  overflow: hidden;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+}
+.cancel_select_item .fl {
+  float: left;
+  flex: 1;
+  font-size: 30rpx;
+}
+.cancel_select_item .fr {
+  float: right;
+  margin-left: 10rpx;
+}
+
+
+.cancel_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 168rpx;
+  padding: 0 30rpx;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  overflow: hidden;
+}
+.cancel_footer view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+}
+.cancel_footer .fl {
+  float: left;
+  width: 336rpx;
+  height: 98rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #909090;
+  border-radius: 4px;
+  color: #909090;
+}
+.cancel_footer .fr {
+  float: right;
+  width: 336rpx;
+  height: 98rpx;
+  border-radius: 4px;
+  background-color: #01a75b;
+  color: #fff;
+}

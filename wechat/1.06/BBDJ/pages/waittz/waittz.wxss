@@ -1,0 +1,145 @@
+/* pages/waittz/waittz.wxss */
+.relation {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  border-bottom: 24rpx solid #FDFCFC;
+}
+.relation_title {
+  display: flex;
+  height: 80rpx;
+  align-items: center;
+  border-bottom: 1rpx solid #f4f5fa;
+}
+.relation_title_fl {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+}
+.relation_title_fr{
+  font-size: 24rpx;
+  color: #909090;
+}
+.relation_ct {
+  padding: 30rpx 0;
+}
+.relation_ct_site {
+  font-size: 28rpx;
+  color: #333;
+}
+.relation_ct_msg {
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.relation_ct_msg .fl1 {
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 50%;
+}
+.relation_ct_msg .fl1 image {
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.relation_ct_msg .fl2 {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #909090;
+}
+.relation_ct_msg .fl3 {
+  flex: 1;
+  text-align: right;
+  width: 82rpx;
+  height: 82rpx;
+  border-radius: 50%;
+}
+.relation_ct_msg .fl3 image {
+  
+  width: 82rpx;
+  height: 82rpx;
+  border-radius: 50%;
+}
+
+
+.awit_floor01 {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  text-align: center;
+  padding-bottom: 40rpx;
+  border-bottom: 20rpx solid #FDFCFC;
+}
+.awit_floor01 image {
+  margin: 0 auto;
+  display: block;
+  width: 470rpx;
+  height: 452rpx;
+}
+.awit_floor01 .view1 {
+  font-size: 40rpx;
+  color: #FE690A;
+}
+.awit_floor01 .view2 {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+
+
+
+.awit_footer {
+  position: fixed;
+  
+  bottom: 0;
+  width: 100%;
+  height: 168rpx;
+  padding: 0 30rpx;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  overflow: hidden;
+}
+.awit_footer view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+}
+.awit_footer .fl {
+  float: left;
+  width: 336rpx;
+  height: 98rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #909090;
+  border-radius: 4px;
+  color: #909090;
+}
+.awit_footer .fr {
+  float: right;
+  width: 336rpx;
+  height: 98rpx;
+  border-radius: 4px;
+  background-color: #01a75b;
+  color: #fff;
+}
+
+.wait {
+  width: 100%;
+  border-top: 1rpx solid #f4f5fa;
+  padding-bottom: 188rpx;
+}
+.jd {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.jd .jd_t {
+  font-size: 28rpx;
+  color: #333;
+}
+.jd .jd_p {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #909090;
+}

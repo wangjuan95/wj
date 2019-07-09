@@ -1,0 +1,125 @@
+/* pages/tzwater/tzwater.wxss */
+picker {
+  font-size: 50rpx;
+}
+.tzwater {
+  border-top: 1rpx solid #f4f5fa;
+  padding-bottom: 200rpx;
+}
+.tzwater_stage {
+  width: 100%;
+  height: 110rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #f4f5fa;
+  display: flex;
+  align-items: center;
+}
+.tzwater_stage .fl {
+  font-size: 34rpx;
+  color: #333;
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.tzwater_stage .fl view {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+.tzwater_stage .fr image {
+  width: 13rpx;
+  height: 23rpx;
+  display: block;
+}
+.tzwater_list {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.tzwater_list_title {
+  padding-top: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.tzwater_list_item {
+  height: 170rpx;
+  border-bottom: 1rpx solid #f4f5fa;
+}
+.tzwater_list_item_title {
+  padding-top: 35rpx;
+  width: 100%;
+  font-size: 34rpx;
+  color: #333;
+}
+.tzwater_list_item_cat {
+  padding-top: 15rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.tzwater_list_item_cat .fl {
+  flex: 1;
+  color: #FE690A;
+  font-size: 34rpx;
+  font-weight: 700;
+}
+.tzwater_list_item_cat .fr {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.tzwater_list_item_cat .fr text {
+  float: left;
+  padding: 0 16rpx;
+}
+.tzwater_list_item_cat .fr image {
+  float: left;
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.tzwater_footer {
+  border-top: 1rpx solid #f4f5fa;  
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 154rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.tzwater_footer .fl {
+  flex: 1;
+}
+.tzwater_footer .fl .view_a .text_a {
+  font-size: 30rpx;
+  color: #333;
+  padding-right: 10rpx;
+}
+.tzwater_footer .fl .view_a .text_b {
+  font-size: 40rpx;
+  color: #FE690A;
+  font-weight: 700;
+  /* padding-left: 20rpx; */
+}
+
+.tzwater_footer .fl .view_b {
+  margin-top: 10rpx;
+  font-size: 22rpx;
+  color: #909090;
+}
+.tzwater_footer .fr {
+  width: 336rpx;
+  height: 98rpx;
+  border-radius: 4px;
+  background-color: #01a85b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 34rpx;
+}

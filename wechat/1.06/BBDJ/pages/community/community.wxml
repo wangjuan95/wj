@@ -1,0 +1,17 @@
+<!--pages/community/community.wxml-->
+<view class='community'>
+  <view class='community_list'>
+    <view class='community_list_xx'>
+      <view class='community_list_item' data-id="{{item.id}}" wx:for="{{community}}" wx:key="" bindtap='btn'>
+        <view class='community_list_item_name'>
+          <text class='title_name'>驿站名称：</text>
+          <text class='title_site'>{{item.username}}</text>
+        </view>
+        <view class='community_list_item_name'>
+          <text class='title_name'>驿站地址：</text>
+          <text class='title_site'>{{item.region + item.address}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

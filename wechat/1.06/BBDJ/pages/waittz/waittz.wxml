@@ -1,0 +1,36 @@
+<!--pages/waittz/waittz.wxml-->
+<view class='wait'>
+  <view class='awit_floor01'>
+    <image src='/images/jdw.png'></image>
+    <view class='view1'>正在派单</view>
+    <view class='view2'  wx:if="{{wait.server_type == 4}}">将由专门负责您小区的师傅接单</view>
+    <view class='view2'  wx:if="{{wait.server_type == 2}}">正在通知商家...</view>
+  </view>
+  <view class='jd'>
+    <view class='jd_t'>一般多久接单？</view>
+    <view class='jd_p'>如果没有特殊情况，一般5分钟内。</view>
+  </view>
+
+  <view class='relation'>
+    <view class='relation_title'>
+      <view class='relation_title_fl'>联系商家</view>
+    </view>
+    <view class='relation_ct'>
+      <view class='relation_ct_msg'>
+        <view class='fl1'><image src="/images/stage_logo.png"></image></view>
+        <view class='fl2'><text>{{wait.distributorinfo.contacts}}</text></view>
+        <view class='fl3' ><image src="/images/wait_phone.png" bindtap='calling'></image></view>
+      </view>
+      <view class='relation_ct_site'>
+        地址：{{wait.distributorinfo.region + wait.distributorinfo.address}}
+      </view>
+    </view>
+    
+  </view>
+  <view class='awit_footer'>
+    <view bindtap='ad' class='fl'>取消订单</view>
+    <view class='fr' bindtap='xq'>查看订单</view>
+  </view>
+</view>
+
+

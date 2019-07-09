@@ -1,0 +1,85 @@
+/* pages/expressSiteList/expressSiteList.wxss */
+/* page {
+  height: 100%;
+} */
+.expressSiteList {
+  border-top: 1rpx solid #f4f5fa;
+  width: 100%;
+  padding-bottom: 20rpx;
+}
+.empty {
+  margin-top: 50%;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.expressSiteList_list {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.expressSiteList_list_item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f4f5fa;
+}
+.expressSiteList_list_item .fl1 {
+  margin-right: 20rpx;
+}
+
+.expressSiteList_list_item .fl2 {
+  flex: 1;
+  color: #909090;
+  font-size: 26rpx;
+}
+.expressSiteList_list_item .fl2 .fl2_1 {
+  font-size: 26rpx;
+  color: #333;
+}
+.expressSiteList_list_item .fl2 .fl2_1 text {
+  padding-right: 20rpx;
+}
+/* .expressSiteList_list_item .fl2 .fl2_1 {
+  display: flex;
+} */
+.expressSiteList_list_item .fl3 {
+  margin-left: 20rpx;
+}
+.expressSiteList_list_item .fl3 image {
+  width: 36rpx;
+  height: 36rpx;
+}
+.expressSiteList_list_item .fl3 .del {
+  padding-left: 20rpx;
+}
+.expressSiteList_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 168rpx;
+  padding: 0 30rpx;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.submit {
+  width: 100%;
+  height: 98rpx;
+  border-radius: 49rpx;
+  background-color: #01a75b;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  font-size: 34rpx;
+  color: #fff;
+}
+.empty_ct {
+  width: 100%;
+  height: 100%;
+  margin-top: 40%;
+  text-align: center;
+  
+}

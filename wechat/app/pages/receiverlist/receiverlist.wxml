@@ -1,0 +1,20 @@
+<!--pages/receiverlist/receiverlist.wxml-->
+ <view class="table">
+  <view class="tr">
+    <view class="th" style='width:20%'>取件快递员</view>
+    <view class="th" style='width:30%'>快递员电话</view>
+    <view class="th " style='width:30%'>网点</view>
+    <view class="th " style='width:30%'>网点电话</view>
+  </view>
+  <block  wx:for="{{arrlist}}" wx:key="">
+    <view class="tr bg-g">
+    <view class="td" style='width:20%'>{{item.receiver}}</view>
+      <view class="td" style='width:30%'>{{item.receiverphone}}</view>
+      <view class="td" style='width:30%'>{{item.recnetwork}}</view>
+      <view class="td" style='width:30%'>{{item.recphone}}</view>
+    </view>
+
+  </block>
+
+ 
+</view>

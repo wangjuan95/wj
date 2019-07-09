@@ -1,0 +1,134 @@
+/* pages/express/express.wxss */
+.express {
+  border-top: 1rpx solid #f4f5fa;
+  padding-bottom: 200rpx;
+}
+.express_js {
+  padding-left: 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 24rpx solid #FDFCFC;
+  box-sizing: border-box;
+}
+.express_jj  {
+  border-bottom: 1rpx solid #f4f5fa;
+}
+.express_j {
+  display: flex;
+  align-items: center;
+  min-height: 200rpx;
+  box-sizing: border-box;
+}
+.express_js_left image {
+  display: block;
+  width: 72rpx;
+  height: 72rpx;
+}
+.express_js_right {
+  border-left: 1rpx solid #f4f5fa;
+}
+.express_js_right image {
+  display: block;
+  width: 44rpx;
+  height: 44rpx;
+  margin-left: 20rpx;
+  margin-right: 30rpx;
+}
+.qsrj {
+  font-size: 32rpx;
+  color: #333;
+}
+.express_js_center {
+  flex: 1;
+  margin-left: 34rpx;
+  margin-right: 34rpx;
+  /* padding-bottom: 20rpx; */
+  position: relative;
+}
+.authentication {
+  position: absolute;
+  top: -4rpx;
+  right: 0;
+  background-color: #ff8814;
+  padding: 6rpx 30rpx;
+  color: #fff;
+  font-size: 28rpx;
+  border-radius: 30rpx;
+}
+.express_js_center .xx {
+  font-size: 32rpx;
+  color: #333;
+}
+.express_js_center .xx .text1 {
+  padding-right: 20rpx;
+}
+.express_js_center .dz {
+  margin-top: 8rpx;
+  font-size: 28rpx;
+  color: #909090;
+}
+.express_type {
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.express_type_ct {
+  display: flex;
+  padding: 40rpx 0;
+  border-bottom: 1rpx solid #f4f5fa;
+}
+.express_type_ct_left {
+  font-size: 30rpx;
+  color: #333;
+}
+.express_type_ct_right {
+  flex: 1;
+  font-size: 30rpx;
+  color: #333;
+  margin-right: 30rpx;
+  text-align: right;
+}
+.express_type_ct_right {
+  font-size: 28rpx;
+  color: #909090;
+}
+.express_type_ct_right image {
+  margin-left: 20rpx;
+  width: 13rpx;
+  height: 23rpx;
+  vertical-align: middle;
+}
+
+/* 固定底 */
+.express_bottom {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 150rpx;
+  padding:  0 30rpx;
+  box-sizing: border-box;
+  border-top: 1rpx solid #F2F3F9;
+}
+.express_bottom_left {
+  flex: 1;
+}
+.express_bottom_left .text_a {
+  font-size: 30rpx;
+  color: #333;
+}
+.express_bottom_left .text_b {
+  font-size: 46rpx;
+  color: #FE690A;
+  font-weight: 700;
+}
+.express_bottom_right view {
+  width: 336rpx;
+  height: 98rpx;
+  background-color: #01A75B;
+  color: #fff;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+}

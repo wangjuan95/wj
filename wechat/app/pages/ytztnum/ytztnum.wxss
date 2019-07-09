@@ -1,0 +1,5 @@
+/* pages/ytztnum/ytztnum.wxss */
+.viewtu{
+  width:100%;
+  height:80%;
+}

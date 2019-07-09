@@ -1,0 +1,406 @@
+<!--pages/wait/wait.wxml-->
+<!-- 桶装水 -->
+<view class='wait' wx:if="{{wait.server_type == 1}}">
+  <view class='awit_floor01' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 2 && wait.states == 1}}">
+    <image src='/images/jdw.png'></image>
+    <view class='view1'>等待商家接单</view>
+    <!-- <view class='view2'>将由专门负责您小区的师傅接单</view> -->
+  </view>
+  <view class='awit_floor01' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 2 && wait.states == 2}}">
+    <image src='/images/jdw.png'></image>
+    <view class='view1'>等待商家送货上门</view>
+  </view>
+  <view class='awit_floor01' wx:if="{{wait.is_cancel == 2 && wait.pay_states == 2}}">
+    <image src='/images/jdq.png'></image>
+    <view class='view1'>已取消接单</view>
+    <view class='view2'>
+      <text>
+      取消订单：客户取消 | 与用户达成一致
+      若订单已支付，支付金额将原路返回
+      </text>
+    </view>
+  </view>
+  <view class='awit_floor01' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 2 && wait.states == 4}}">
+    <image src='/images/jdy.png'></image>
+    <view class='view1 view2'>已送达，感谢购买</view>
+  </view>
+  <!-- 商品列表 -->
+  <view class='makeWater_top'>
+    <view class='makeWater_commodity'>
+      <view class='makeWater_commodity_title'><text>商品列表</text></view>
+      <view class='makeWater_commodity_list' wx:for="{{wait.detailed}}" wx:for-item="items" wx:key="">
+        <view class='view1'>
+          <view class='fl'><text>{{items.commodity_name}}</text></view>
+          <view class='fr'>X<text>{{items.number}}</text></view>
+        </view>
+        <view class='view2'>
+          <view class='fl'>¥<text>{{items.money}}</text></view>
+          <view class='fr'>¥<text>{{items.number*items.money}}</text></view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+  <!-- 地址 -->
+  <view class='makeWater_servesite'>
+    <view class='makeWater_servesite_list'>
+      <view class='makeWater_servesite_item'>
+        <view class='makeWater_servesite_item_title'><text>上门地址</text></view>
+        <view class='makeWater_servesite_item_ct' bindtap='hq'>
+          <view class='fl fl1'><image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/make_servesite.png'></image></view>
+          <view class='fl fl2'>
+            <view class='text1'><text>{{wait.region}}</text></view>
+            <view class='text2'><text>{{wait.address}}</text></view>
+            <view class='text2'><text>{{wait.user_name}}</text><text>{{wait.user_mobile}}</text></view>
+          </view>
+          <view class='fr'><image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/make_serve_right.png'></image></view>
+        </view>
+      </view>
+      <view class='makeWater_servesite_item'>
+        <view class='makeWater_servesite_item_title'><text>希望上门时间</text></view>
+        <!-- <picker mode="multiSelector" bindchange="bindStartMultiPickerChange" bindtap='pickerTap' bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}"> -->
+
+          <view class='makeWater_servesite_item_ct'>
+            <view class='fl fl1'><image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/make_servetime.png'></image></view>
+            <view class='fl fl2'>
+              <view class='text1'><text>{{wait.time_appointment}}</text></view>
+            </view>
+            <view class='fr'><image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/make_serve_right.png'></image></view>
+          
+          </view>
+        <!-- </picker> -->
+
+      </view>
+    </view>
+    
+  </view>
+  <!-- 联系商家 -->
+  <view class='relation' wx:if="{{wait.pay_states == 2}}">
+    <view class='relation_title'>
+      <view class='relation_title_fl'>联系商家</view>
+      <view class='relation_title_fr'>支持上门取件</view>
+    </view>
+    <view class='relation_ct'>
+      <view class='relation_ct_site'>
+        地址：{{wait.distributorinfo.region + wait.distributorinfo.address}}
+      </view>
+      <view class='relation_ct_msg'>
+        <view class='fl1'><image src="/images/stage_logo.png"></image></view>
+        <view class='fl2'><text>{{wait.distributorinfo.contacts}}</text></view>
+        <view class='fl3' ><image src="/images/wait_phone.png" bindtap='calling'></image></view>
+      </view>
+    </view>
+    
+  </view>
+  <!-- 订单信息 -->
+  <view class='indent'>
+    <view class='indent_title'>订单信息</view>
+    <view class='indent_item'>
+      <view class='indent_item_fl'>订单号码</view>
+      <view class='indent_item_fr'>{{wait.order_number}}</view>
+    </view>
+    <view class='indent_item'>
+      <view class='indent_item_fl'>下单时间</view>
+      <view class='indent_item_fr'>{{wait.create_time}}</view>
+    </view>
+    <view class='indent_item'>
+      <view class='indent_item_fl'>支付方式</view>
+      <view class='indent_item_fr'>在线支付</view>
+    </view>
+  </view>
+  <!-- 客服号码 -->
+  <view class="kfhm" wx:if="{{wait.pay_states == 2}}">
+    <text>客服电话：400-234-0009</text>
+  </view>
+<!-- 底 -->
+  <view class='awit_footer' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 2 && (wait.states == 1 || wait.states == 2)}}">
+    <view bindtap='ad' class='fl'>取消订单</view>
+    <view bindtap="fh" class='fr'>返回首页</view>
+  </view>
+  <view class='awit_footer' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 2 && wait.states == 4 }}">
+    <!-- <view bindtap='ad' class='fl'>取消订单</view> -->
+    <view bindtap="fh" class='fr'>返回首页</view>
+  </view>
+  <view class='awit_footer' wx:if="{{wait.is_cancel ==2}}">
+    <!-- <view bindtap='ad' class='fl'>评价</view> -->
+    <view bindtap="fh" class='fr'>再来一单</view>
+  </view>
+  <view class='awit_footer1' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 1}}">
+    <view class='zf' bindtap='zf'>微信支付</view>
+  </view>
+</view>
+
+ <!-- 维修保洁 -->
+<view class="{{(wait.is_cancel ==1 && wait.pay_states == 1 && wait.states == 8) || (wait.is_cancel ==1 && wait.pay_states == 2 && wait.states == 8)?'wait' : 'wait_wx'}}" wx:elif="{{wait.server_type == 2}}">
+  <view class='awit_floor01' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 1 && wait.states == 1}}">
+    <image src='/images/jdw.png'></image>
+    <view class='view1'>等待师傅接单</view>
+    <!-- <view class='view2'>将由专门负责您小区的师傅接单</view> -->
+  </view>
+  <view class='awit_floor01' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 1 && wait.states == 2}}">
+    <image src='/images/jdw.png'></image>
+    <view class='view1'>等待师傅上门</view>
+  </view>
+  <view class='awit_floor01' wx:if="{{wait.is_cancel == 1 && wait.pay_states == 1 && wait.states == 8}}">
+    <image src='/images/jdy.png'></image>
+    <!-- <view class='view1'>师傅维修中</view> -->
+    <view class='view1 ls'>请确认服务项目</view>
+    <view class='view1 ls'> 无误后，请支付</view>
+  </view>
+  <view class='awit_floor01' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 2 && wait.states == 8}}">
+    <image src='/images/wx.png'></image>
+    <view class='view1 ls'>确认维修完成</view>
+  </view>
+  <view class='awit_floor01' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 2 && wait.states == 4}}">
+    <image src='/images/jdy.png'></image>
+    <view class='view1 ls'>订单已完成</view>
+  </view>
+  <view class='awit_floor01' wx:if="{{wait.is_cancel == 2}}">
+    <image src='/images/jdq.png'></image>
+    <view class='view1 view3'>取消订单</view>
+  </view>
+  <!-- 商品列表 -->
+  <view class="{{wait.detailed.length == 0?'hide': 'makeWater_top'}}">
+    <view class='makeWater_commodity'>
+      <view class='makeWater_commodity_title'><text>商品列表</text></view>
+      <view class='makeWater_commodity_list' wx:for="{{wait.detailed}}" wx:for-item="items" wx:key="">
+        <view class='view1'>
+          <view class='fl'><text>{{items.commodity_name}}</text></view>
+          <view class='fr'>x <text>{{items.number}}</text></view>
+        </view>
+        <view class='view2'>
+          <view class='fl'>¥<text>{{items.money}}</text></view>
+          <view class='fr'>¥<text>{{items.number*items.money}}</text></view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+  <!-- 地址 -->
+  <view class='makeWater_servesite'>
+    <view class='makeWater_servesite_list'>
+      <view class='makeWater_servesite_item'>
+        <view class='makeWater_servesite_item_title'><text>上门地址</text></view>
+        <view class='makeWater_servesite_item_ct' bindtap='hq'>
+          <view class='fl fl1'><image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/make_servesite.png'></image></view>
+          <view class='fl fl2'>
+            <view class='text1'><text>{{wait.region}}</text></view>
+            <view class='text2'><text>{{wait.address}}</text></view>
+            <view class='text2'><text>{{wait.user_name}}</text><text>{{wait.user_mobile}}</text></view>
+          </view>
+          <view class='fr'><image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/make_serve_right.png'></image></view>
+        </view>
+      </view>
+      <view class='makeWater_servesite_item' wx:if="{{(wait.server_type == 2 || wait.server_type == 3) && wait.states != 1}}">
+        <view class='makeWater_servesite_item_title'><text>维修师傅</text></view>
+          <view class='makeWater_servesite_item_ct'>
+            <view class='fl fl1'><image src='/images/wx_01.png'></image></view>
+            <view class='fl fl2'>
+              <view class='text1'><text>{{wait.sf_name}}</text></view>
+            </view>
+            <view class='fr dh' bindtap='sf'><image src='/images/wait_phone.png'></image></view>
+          
+          </view>
+        <!-- </picker> -->
+
+      </view>
+    </view>
+    
+  </view>
+  <!-- 联系商家 -->
+  <view class='relation' wx:if="{{wait.states == 2 && wait.server_type != 2 && wait.server_type != 3}}">
+    <view class='relation_title'>
+      <view class='relation_title_fl'>本次服务的社区管家</view>
+    </view>
+    <view class='relation_ct'>
+      
+      <view class='relation_ct_msg wx'>
+        <view class='fl1'><image src="/images/stage_logo.png"></image></view>
+        <view class='fl2'><text>{{wait.distributorinfo.contacts}}</text></view>
+        <view class='fl3' ><image src="/images/wait_phone.png" bindtap='calling'></image></view>
+      </view>
+      <view class='relation_ct_site wx'>
+        管家负责监管维修质量、维修收费和售后服务，有任何问题可以随时联系管家。
+      </view>
+      <view class='wx_t'>*如需维修，则最低费用为100元，不足100元将按100元收取</view>
+    </view>
+    
+  </view>
+  <!-- 订单信息 -->
+  <view class='indent'>
+    <view class='indent_title'>订单信息</view>
+    <view class='indent_item'>
+      <view class='indent_item_fl'>订单号码</view>
+      <view class='indent_item_fr'>{{wait.order_number}}</view>
+    </view>
+    <view class='indent_item'>
+      <view class='indent_item_fl'>下单时间</view>
+      <view class='indent_item_fr'>{{wait.create_time}}</view>
+    </view>
+    <view class='indent_item'>
+      <view class='indent_item_fl'>支付方式</view>
+      <view class='indent_item_fr'>在线支付</view>
+    </view>
+  </view>
+  
+  <!-- 取消订单  客服号码-->
+  <view class='ety'>
+    <view class='qxdd' wx:if="{{wait.is_cancel == 1 && wait.pay_states == 1 && wait.states == 8}}">
+      <view bindtap='ad'>
+        取消订单
+        <image src="https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/make_serve_right.png"></image>
+      </view>
+    </view>
+    <!-- 客服号码 -->
+    <view class="kfhm" wx:else>
+      <text>客服电话：400-234-0009</text>
+    </view>
+  </view>
+  
+<!-- 底 -->
+  <view class='awit_footer1' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 1 && wait.states == 8}}">
+    <view class='zf' bindtap='zf'>微信支付</view>
+  </view>
+  <view class='awit_footer1' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 2 && wait.states == 8}}">
+    <view class='zf' bindtap='ys'>确认验收</view>
+  </view>
+</view>
+
+
+<!-- 干洗 -->
+
+<view class="{{wait.pay_states == 2?'wait_wx' : 'wait'}}" wx:elif="{{wait.server_type == 4}}">
+
+  <view class='awit_floor01' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 1 && wait.states == 1}}">
+    <image src='/images/jdw.png'></image>
+    <view class='view1'>等待接单</view>
+    <!-- <view class='view2'>将由专门负责您小区的师傅接单</view> -->
+  </view>
+  <view class='awit_floor01' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 1 && wait.states == 2}}">
+    <image src='/images/jdw.png'></image>
+    <view class='view1'>等待上门</view>
+  </view>
+  <view class='awit_floor01' wx:if="{{wait.is_cancel == 1 && wait.pay_states == 1 && wait.states == 8}}">
+    <image src='/images/jdy.png'></image>
+    <!-- <view class='view1'>师傅维修中</view> -->
+    <view class='view1 ls'>请确认服务项目</view>
+    <view class='view1 ls'> 无误后，请支付</view>
+  </view>
+  <view class='awit_floor01' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 2 && wait.states == 5}}">
+    <image src='/images/gxz.png'></image>
+    <view class='view1 ls'>衣服干洗中</view>
+  </view>
+  <view class='awit_floor01' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 2 && wait.states == 6}}">
+    <image src='/images/gxz.png'></image>
+    <view class='view1 ls'>衣服干洗中</view>
+  </view>
+  <view class='awit_floor01' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 2 && wait.states == 7}}">
+    <image src='/images/gxz.png'></image>
+    <view class='view1 ls'>衣服已到店</view>
+  </view>
+  <view class='awit_floor01' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 2 && wait.states == 4}}">
+    <image src='/images/gxz.png'></image>
+    <view class='view1 ls'>订单完成</view>
+  </view>
+  <view class='awit_floor01' wx:if="{{wait.is_cancel == 2}}">
+    <image src='/images/jdq.png'></image>
+    <view class='view1 view3'>取消订单</view>
+  </view>
+  <!-- 商品列表 -->
+  <view class="{{wait.detailed.length == 0?'hide': 'makeWater_top'}}">
+    <view class='makeWater_commodity'>
+      <view class='makeWater_commodity_title'><text>商品列表</text></view>
+      <view class='makeWater_commodity_list' wx:for="{{wait.detailed}}" wx:for-item="items" wx:key="">
+        <view class='view1'>
+          <view class='fl'><text>{{items.commodity_name}}</text></view>
+          <view class='fr'>x <text>{{items.number}}</text></view>
+        </view>
+        <view class='view2'>
+          <view class='fl'>¥<text>{{items.money}}</text></view>
+          <view class='fr'>¥<text>{{items.number*items.money}}</text></view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+  <!-- 地址 -->
+  <view class='makeWater_servesite'>
+    <view class='makeWater_servesite_list'>
+      <view class='makeWater_servesite_item'>
+        <view class='makeWater_servesite_item_title'><text>上门地址</text></view>
+        <view class='makeWater_servesite_item_ct' bindtap='hq'>
+          <view class='fl fl1'><image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/make_servesite.png'></image></view>
+          <view class='fl fl2'>
+            <view class='text1'><text>{{wait.region}}</text></view>
+            <view class='text2'><text>{{wait.address}}</text></view>
+            <view class='text2'><text>{{wait.user_name}}</text><text>{{wait.user_mobile}}</text></view>
+          </view>
+          <view class='fr'><image src='https://bbsh-com.oss-cn-beijing.aliyuncs.com/xiaochengxu/WeChat_img/images/make_serve_right.png'></image></view>
+        </view>
+      </view>
+      <!-- <view class='makeWater_servesite_item' wx:if="{{(wait.server_type == 2 || wait.server_type == 3) && wait.states != 1}}">
+        <view class='makeWater_servesite_item_title'><text>维修师傅</text></view>
+          <view class='makeWater_servesite_item_ct'>
+            <view class='fl fl1'><image src='/images/wx_01.png'></image></view>
+            <view class='fl fl2'>
+              <view class='text1'><text>{{wait.sf_name}}</text></view>
+            </view>
+            <view class='fr dh' bindtap='sf'><image src='/images/wait_phone.png'></image></view>
+          
+          </view>
+
+      </view> -->
+    </view>
+    
+  </view>
+  <!-- 联系商家 -->
+  <view class='relation' wx:if="{{wait.states > 1}}">
+    <view class='relation_title'>
+      <view class='relation_title_fl'>本次服务的社区管家</view>
+    </view>
+    <view class='relation_ct'>
+      
+      <view class='relation_ct_msg wx'>
+        <view class='fl1'><image src="/images/stage_logo.png"></image></view>
+        <view class='fl2'><text>{{wait.distributorinfo.contacts}}</text></view>
+        <view class='fl3' ><image src="/images/wait_phone.png" bindtap='calling'></image></view>
+      </view>
+      <view class='relation_ct_site wx'>
+        管家负责监管维修质量、维修收费和售后服务，有任何问题可以随时联系管家。
+      </view>
+      <view class='wx_t'>*如需维修，则最低费用为100元，不足100元将按100元收取</view>
+    </view>
+    
+  </view>
+  <!-- 订单信息 -->
+  <view class='indent'>
+    <view class='indent_title'>订单信息</view>
+    <view class='indent_item'>
+      <view class='indent_item_fl'>订单号码</view>
+      <view class='indent_item_fr'>{{wait.order_number}}</view>
+    </view>
+    <view class='indent_item'>
+      <view class='indent_item_fl'>下单时间</view>
+      <view class='indent_item_fr'>{{wait.create_time}}</view>
+    </view>
+    <view class='indent_item'>
+      <view class='indent_item_fl'>支付方式</view>
+      <view class='indent_item_fr'>在线支付</view>
+    </view>
+  </view>
+  
+  <!-- 取消订单  客服号码-->
+  <view class='ety'>
+    
+    <!-- 客服号码 -->
+    <view class="kfhm" wx:if="{{wait.pay_states == 2}}">
+      <text>客服电话：400-234-0009</text>
+    </view>
+  </view>
+  
+<!-- 底 -->
+  <view class='awit_footer1' wx:if="{{wait.is_cancel ==1 && wait.pay_states == 1 && wait.states == 8}}">
+    <view class='zf' bindtap='zf'>微信支付</view>
+  </view>
+</view>
+
