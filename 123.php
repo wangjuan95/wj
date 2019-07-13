@@ -26,5 +26,3 @@ echo '卖萌';
 echo '反测试';
 echo  123456;
 echo '今天';
-echo 'haha';
-
